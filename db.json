@@ -769,5 +769,76 @@
       "dossierCategorieDescriptionArabe": "وصف مفصل للفئة د.",
       "dossierCategorieEtat": 0
     }
+  ],
+  "dossierSousCategories": [
+    {
+      "id": "1",
+      "dossierCategorieRef": 101,
+      "dossierSousCategorieLibelle": "Sous-catégorie A",
+      "dossierSousCategorieLibelleArabe": "الفئة الفرعية A",
+      "dossierSousCategorieDescription": "Description de la sous-catégorie A.",
+      "dossierSousCategorieDescriptionArabe": "وصف الفئة الفرعية A.",
+      "dossierSousCategorieEtat": 1
+    },
+    {
+      "id": "2",
+      "dossierCategorieRef": 102,
+      "dossierSousCategorieLibelle": "Sous-catégorie B upppppppppppppppppp",
+      "dossierSousCategorieLibelleArabe": "الفئة الفرعية B",
+      "dossierSousCategorieDescription": "Description de la sous-catégorie B.",
+      "dossierSousCategorieDescriptionArabe": "وصف الفئة الفرعية B.",
+      "dossierSousCategorieEtat": 0
+    },
+    {
+      "id": "3",
+      "dossierCategorieRef": 103,
+      "dossierSousCategorieLibelle": "Sous-catégorie C",
+      "dossierSousCategorieLibelleArabe": "الفئة الفرعية C",
+      "dossierSousCategorieDescription": "Description de la sous-catégorie C.",
+      "dossierSousCategorieDescriptionArabe": "وصف الفئة الفرعية C.",
+      "dossierSousCategorieEtat": 1
+    }
+  ],
+  "preContentieuxTypeCategories": [
+    {
+      "id": "1",
+      "preContentieuxTypeCategorieLibelle": "Catégorie de Réclamation",
+      "preContentieuxTypeCategorieLibelleArabe": "فئة الشكاوى",
+      "preContentieuxTypeCategorieLibelleDescription": "Catégorie utilisée pour les réclamations des clients.",
+      "preContentieuxTypeCategorieLibelleDescriptionArabe": "فئة تستخدم للشكاوى من العملاء.",
+      "preContentieuxTypeCategorieEtat": 1
+    },
+    {
+      "id": "2",
+      "preContentieuxTypeCategorieLibelle": "Catégorie de Litige",
+      "preContentieuxTypeCategorieLibelleArabe": "فئة النزاعات",
+      "preContentieuxTypeCategorieLibelleDescription": "Catégorie pour les litiges entre parties.",
+      "preContentieuxTypeCategorieLibelleDescriptionArabe": "فئة للنزاعات بين الأطراف.",
+      "preContentieuxTypeCategorieEtat": 1
+    },
+    {
+      "id": "3",
+      "preContentieuxTypeCategorieLibelle": "Catégorie de Réclamation Contractuelle",
+      "preContentieuxTypeCategorieLibelleArabe": "فئة الشكاوى التعاقدية",
+      "preContentieuxTypeCategorieLibelleDescription": "Catégorie pour les réclamations liées aux contrats.",
+      "preContentieuxTypeCategorieLibelleDescriptionArabe": "فئة للشكاوى المتعلقة بالعقود.",
+      "preContentieuxTypeCategorieEtat": 0
+    },
+    {
+      "id": "4",
+      "preContentieuxTypeCategorieLibelle": "Catégorie d'Indemnisation",
+      "preContentieuxTypeCategorieLibelleArabe": "فئة التعويضات",
+      "preContentieuxTypeCategorieLibelleDescription": "Catégorie pour les demandes d'indemnisation.",
+      "preContentieuxTypeCategorieLibelleDescriptionArabe": "فئة لطلبات التعويض.",
+      "preContentieuxTypeCategorieEtat": 1
+    },
+    {
+      "id": "5",
+      "preContentieuxTypeCategorieLibelle": "Catégorie de Recours",
+      "preContentieuxTypeCategorieLibelleArabe": "فئة الطعون",
+      "preContentieuxTypeCategorieLibelleDescription": "Catégorie pour les recours légaux et les appels.",
+      "preContentieuxTypeCategorieLibelleDescriptionArabe": "فئة للطعون القانونية والاستئنافات.",
+      "preContentieuxTypeCategorieEtat": 0
+    }
   ]
 }

@@ -91,6 +91,14 @@ import { DossierCategorieComponent } from './ComponentDossierCategorie/list/doss
 import { AddDossCategComponent } from './ComponentDossierCategorie/add/add-doss-categ/add-doss-categ.component';
 import { DetailDossCategComponent } from './ComponentDossierCategorie/detail/detail-doss-categ/detail-doss-categ.component';
 import { DossierCategorieUpdateComponent } from './ComponentDossierCategorie/update/dossier-categorie-update/dossier-categorie-update.component';
+import { DossierSousCategorieListComponent } from './ComponentDossierSousCategorie/list/dossier-sous-categorie-list/dossier-sous-categorie-list.component';
+import { DetailDossierSousCategorieComponent } from './ComponentDossierSousCategorie/detail/detail-dossier-sous-categorie/detail-dossier-sous-categorie.component';
+import { AddDossierSousCategorieComponent } from './ComponentDossierSousCategorie/ajout/add-dossier-sous-categorie/add-dossier-sous-categorie.component';
+import { DSCategComponent } from './ComponentDossierSousCategorie/modif/dscateg/dscateg.component';
+import { PreContentieuxTypeCategorieListtComponent } from './ComponentPreContentieuxTypeCategorie/list/pre-contentieux-type-categorie-listt/pre-contentieux-type-categorie-listt.component';
+import { DetailsComponent } from './ComponentPreContentieuxTypeCategorie/details/details/details.component';
+import { PreContentieuxTypeCategorieADDDDComponent } from './ComponentPreContentieuxTypeCategorie/add/pre-contentieux-type-categorie-adddd/pre-contentieux-type-categorie-adddd.component';
+import { PreContentieuxTypeCategorieMODIFFFComponent } from './ComponentPreContentieuxTypeCategorie/upppppdate/pre-contentieux-type-categorie-modifff/pre-contentieux-type-categorie-modifff.component';
 
 export const Approutes: Routes = [
   {
@@ -216,11 +224,18 @@ export const Approutes: Routes = [
 ///////////////////////////
 { path: 'dossier-categories', component: DossierCategorieComponent },
 { path: 'add-dossier-categorie', component: AddDossCategComponent },
-{
-  path: 'dossier-categories/:id',
-  component: DetailDossCategComponent
-},
-{ path: 'dossier-categories-up/:id', component: DossierCategorieUpdateComponent }, // Route for updating an existing category
+{path: 'dossier-categories/:id', component: DetailDossCategComponent},
+{ path: 'dossier-categories-up/:id', component: DossierCategorieUpdateComponent }, 
+/////////////////////
+{ path: 'dossier-sous-categories', component: DossierSousCategorieListComponent },
+{ path: 'dossier-sous-categories/:id', component: DetailDossierSousCategorieComponent },
+{ path: 'dossier-sous-categorie-add', component: AddDossierSousCategorieComponent },
+{ path: 'dossier-sous-categorie-edit/:id', component: DSCategComponent },
+/////////////////////
+{ path: 'categorie-pre-contentieux', component: PreContentieuxTypeCategorieListtComponent },
+{ path: 'pre-contentieux-type-categories/:id', component: DetailsComponent },
+{ path: 'categorie-pre-contentieux-add', component: PreContentieuxTypeCategorieADDDDComponent},
+{ path: 'update-pre-contentieux-type-categorie/:id', component: PreContentieuxTypeCategorieMODIFFFComponent},
 
     ] 
   },

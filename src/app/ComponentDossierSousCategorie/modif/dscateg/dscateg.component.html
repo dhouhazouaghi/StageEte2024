@@ -1,0 +1,89 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+        <div class="card-header" style="background-color: #829B66; color: white;">
+            <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@updateDossierSousCategorieTitle">Mettre à jour une sous-catégorie de dossier</h4>
+        </div>
+        <div class="card-body p-5">
+            <form [formGroup]="dossierSousCategorieForm" (ngSubmit)="updateDossierSousCategorie()" class="row g-3">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+                        <div class="custom-switch d-flex align-items-center">
+                            <input type="checkbox" id="dossierSousCategorieEtat" (change)="onEtatChange($event)" [checked]="dossierSousCategorieForm.controls['dossierSousCategorieEtat'].value === 1">
+                            <label class="form-check-label" for="dossierSousCategorieEtat"></label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="dossierCategorieRef" class="form-label bold-label" i18n="@@dossierCategorieRefLabel">
+                            Référence Catégorie <span class="text-danger">*</span>
+                        </label>
+                        <input id="dossierCategorieRef" type="number" class="form-control green-border" formControlName="dossierCategorieRef" required>
+                        <div *ngIf="dossierSousCategorieForm.controls['dossierCategorieRef'].invalid && (dossierSousCategorieForm.controls['dossierCategorieRef'].dirty || dossierSousCategorieForm.controls['dossierCategorieRef'].touched)">
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierCategorieRef'].errors?.['required']" i18n="@@dossierCategorieRefRequired">Référence Catégorie est requise.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="dossierSousCategorieLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+                            Libelle <span class="text-danger">*</span>
+                        </label>
+                        <input id="dossierSousCategorieLibelle" type="text" class="form-control green-border" formControlName="dossierSousCategorieLibelle" required>
+                        <div *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieLibelle'].invalid && (dossierSousCategorieForm.controls['dossierSousCategorieLibelle'].dirty || dossierSousCategorieForm.controls['dossierSousCategorieLibelle'].touched)">
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieLibelle'].errors?.['required']" i18n="@@libelleRequired">Libelle est requis.</small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="dossierSousCategorieLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+                            Libelle Arabe <span class="text-danger">*</span>
+                        </label>
+                        <input id="dossierSousCategorieLibelleArabe" type="text" class="form-control green-border" formControlName="dossierSousCategorieLibelleArabe" required>
+                        <div *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieLibelleArabe'].invalid && (dossierSousCategorieForm.controls['dossierSousCategorieLibelleArabe'].dirty || dossierSousCategorieForm.controls['dossierSousCategorieLibelleArabe'].touched)">
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libelle Arabe est requis.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="dossierSousCategorieDescription" class="form-label bold-label" i18n="@@descriptionLabel">
+                            Description <span class="text-danger">*</span>
+                        </label>
+                        <textarea id="dossierSousCategorieDescription" class="form-control green-border" rows="5" formControlName="dossierSousCategorieDescription" required></textarea>
+                        <small class="form-text text-muted">
+                            {{ dossierSousCategorieForm.controls['dossierSousCategorieDescription'].value?.length || 0 }}/1000 
+                        </small>
+                        <div *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescription'].invalid && (dossierSousCategorieForm.controls['dossierSousCategorieDescription'].dirty || dossierSousCategorieForm.controls['dossierSousCategorieDescription'].touched)">
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescription'].errors?.['required']" i18n="@@descriptionRequired">Description est requise.</small>
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescription'].errors?.['minlength']" i18n="@@descriptionMinLength">La description doit contenir au moins 10 caractères.</small>
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescription'].errors?.['maxlength']" i18n="@@descriptionMaxLength">La description ne peut pas dépasser 1000 caractères.</small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="dossierSousCategorieDescriptionArabe" class="form-label bold-label" i18n="@@descriptionArabeLabel">
+                            Description Arabe <span class="text-danger">*</span>
+                        </label>
+                        <textarea id="dossierSousCategorieDescriptionArabe" class="form-control green-border" rows="5" formControlName="dossierSousCategorieDescriptionArabe" required></textarea>
+                        <small class="form-text text-muted">
+                            {{ dossierSousCategorieForm.controls['dossierSousCategorieDescriptionArabe'].value?.length || 0 }}/1000 
+                        </small>
+                        <div *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescriptionArabe'].invalid && (dossierSousCategorieForm.controls['dossierSousCategorieDescriptionArabe'].dirty || dossierSousCategorieForm.controls['dossierSousCategorieDescriptionArabe'].touched)">
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescriptionArabe'].errors?.['required']" i18n="@@descriptionArabeRequired">Description Arabe est requise.</small>
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescriptionArabe'].errors?.['minlength']" i18n="@@descriptionArabeMinLength">La description Arabe doit contenir au moins 10 caractères.</small>
+                            <small class="text-danger" *ngIf="dossierSousCategorieForm.controls['dossierSousCategorieDescriptionArabe'].errors?.['maxlength']" i18n="@@descriptionArabeMaxLength">La description Arabe ne peut pas dépasser 1000 caractères.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn custom-btn-success mx-2" [disabled]="dossierSousCategorieForm.invalid" i18n="@@validateButton">Valider</button>
+                    <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

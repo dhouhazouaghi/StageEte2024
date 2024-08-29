@@ -1,0 +1,80 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;">Modifier un type de pré-contentieux</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="preContentieuxTypeCategorieForm" (ngSubmit)="updatePreContentieuxTypeCategorie()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="preContentieuxTypeCategorieEtat" (change)="onEtatChange($event)" [checked]="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieEtat'].value === 1">
+                <label class="form-check-label" for="preContentieuxTypeCategorieEtat"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="preContentieuxTypeCategorieLibelle" class="form-label bold-label">
+                Libelle <span class="text-danger">*</span>
+              </label>
+              <input id="preContentieuxTypeCategorieLibelle" type="text" class="form-control green-border" formControlName="preContentieuxTypeCategorieLibelle">
+              <div *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelle'].invalid && (preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelle'].dirty || preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelle'].touched)">
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelle'].errors?.['required']">Libelle est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="preContentieuxTypeCategorieLibelleArabe" class="form-label bold-label">
+                Libelle Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="preContentieuxTypeCategorieLibelleArabe" type="text" class="form-control green-border" formControlName="preContentieuxTypeCategorieLibelleArabe">
+              <div *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelleArabe'].invalid && (preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelleArabe'].dirty || preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieLibelleArabe'].errors?.['required']">Libelle Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="preContentieuxTypeCategorieDescription" class="form-label bold-label">Description</label>
+              <div class="position-relative">
+                <textarea id="preContentieuxTypeCategorieDescription" class="form-control green-border" formControlName="preContentieuxTypeCategorieDescription" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescription'].invalid && (preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescription'].dirty || preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescription'].touched)">
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescription'].errors?.['required']">Description est requise.</small>
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescription'].errors?.['minlength']">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescription'].errors?.['maxlength']">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="preContentieuxTypeCategorieDescriptionArabe" class="form-label bold-label">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="preContentieuxTypeCategorieDescriptionArabe" class="form-control green-border" formControlName="preContentieuxTypeCategorieDescriptionArabe" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescriptionArabe'].invalid && (preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescriptionArabe'].dirty || preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescriptionArabe'].errors?.['required']">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescriptionArabe'].errors?.['minlength']">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="preContentieuxTypeCategorieForm.controls['preContentieuxTypeCategorieDescriptionArabe'].errors?.['maxlength']">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2">Mettre à jour</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()">Annuler</button>
+          </div>
+        </form>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+  
