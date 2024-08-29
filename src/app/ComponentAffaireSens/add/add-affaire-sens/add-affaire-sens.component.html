@@ -1,0 +1,47 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@addAffaireSensTitle">Ajouter une affaire sens</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="affaireSensForm" (ngSubmit)="addAffaireSens()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="affaireSensEtat" (change)="onEtatChange($event)" [checked]="affaireSensForm.controls['affaireSensEtat'].value === 1">
+                <label class="form-check-label" for="affaireSensEtat"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="affaireSensLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+                Libellé <span class="text-danger">*</span>
+              </label>
+              <input id="affaireSensLibelle" type="text" class="form-control green-border" formControlName="affaireSensLibelle" required>
+              <div *ngIf="affaireSensForm.controls['affaireSensLibelle'].invalid && (affaireSensForm.controls['affaireSensLibelle'].dirty || affaireSensForm.controls['affaireSensLibelle'].touched)">
+                <small class="text-danger" *ngIf="affaireSensForm.controls['affaireSensLibelle'].errors?.['required']" i18n="@@libelleRequired">Libellé est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="affaireSensLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+                Libellé Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="affaireSensLibelleArabe" type="text" class="form-control green-border" formControlName="affaireSensLibelleArabe" required>
+              <div *ngIf="affaireSensForm.controls['affaireSensLibelleArabe'].invalid && (affaireSensForm.controls['affaireSensLibelleArabe'].dirty || affaireSensForm.controls['affaireSensLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="affaireSensForm.controls['affaireSensLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libellé Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2" [disabled]="affaireSensForm.invalid" i18n="@@validateButton">Valider</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

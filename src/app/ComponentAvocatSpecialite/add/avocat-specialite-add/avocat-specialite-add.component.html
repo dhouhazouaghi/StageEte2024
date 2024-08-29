@@ -1,0 +1,77 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@addAvocatSpecialiteTitle">Ajouter une spécialité de l'avocat</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="avocatSpecialiteForm" (ngSubmit)="addAvocatSpecialite()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="avocatSpecialiteEtat" (change)="onEtatChange($event)" [checked]="avocatSpecialiteForm.controls['avocatSpecialiteEtat'].value === 1">
+                <label class="form-check-label" for="avocatSpecialiteEtat"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="avocatSpecialiteLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+                Libellé <span class="text-danger">*</span>
+              </label>
+              <input id="avocatSpecialiteLibelle" type="text" class="form-control green-border" formControlName="avocatSpecialiteLibelle" required>
+              <div *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteLibelle'].invalid && (avocatSpecialiteForm.controls['avocatSpecialiteLibelle'].dirty || avocatSpecialiteForm.controls['avocatSpecialiteLibelle'].touched)">
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteLibelle'].errors?.['required']" i18n="@@libelleRequired">Libellé est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="avocatSpecialiteLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+                Libellé Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="avocatSpecialiteLibelleArabe" type="text" class="form-control green-border" formControlName="avocatSpecialiteLibelleArabe" required>
+              <div *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteLibelleArabe'].invalid && (avocatSpecialiteForm.controls['avocatSpecialiteLibelleArabe'].dirty || avocatSpecialiteForm.controls['avocatSpecialiteLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libellé Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="avocatSpecialiteDescription" class="form-label bold-label" i18n="@@descriptionLabel">Description</label>
+              <div class="position-relative">
+                <textarea id="avocatSpecialiteDescription" class="form-control green-border" formControlName="avocatSpecialiteDescription" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{avocatSpecialiteForm.controls['avocatSpecialiteDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescription'].invalid && (avocatSpecialiteForm.controls['avocatSpecialiteDescription'].dirty || avocatSpecialiteForm.controls['avocatSpecialiteDescription'].touched)">
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescription'].errors?.['required']" i18n="@@descriptionRequired">Description est requise.</small>
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescription'].errors?.['minlength']" i18n="@@descriptionMinLength">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescription'].errors?.['maxlength']" i18n="@@descriptionMaxLength">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="avocatSpecialiteDescriptionArabe" class="form-label bold-label" i18n="@@descriptionArabeLabel">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="avocatSpecialiteDescriptionArabe" class="form-control green-border" formControlName="avocatSpecialiteDescriptionArabe" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{avocatSpecialiteForm.controls['avocatSpecialiteDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescriptionArabe'].invalid && (avocatSpecialiteForm.controls['avocatSpecialiteDescriptionArabe'].dirty || avocatSpecialiteForm.controls['avocatSpecialiteDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescriptionArabe'].errors?.['required']" i18n="@@descriptionArabeRequired">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescriptionArabe'].errors?.['minlength']" i18n="@@descriptionArabeMinLength">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="avocatSpecialiteForm.controls['avocatSpecialiteDescriptionArabe'].errors?.['maxlength']" i18n="@@descriptionArabeMaxLength">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2" [disabled]="avocatSpecialiteForm.invalid" i18n="@@validateButton">Valider</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

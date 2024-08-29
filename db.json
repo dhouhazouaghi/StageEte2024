@@ -1,0 +1,773 @@
+{
+  "tribunalTypes": [
+    {
+      "id": "1",
+      "tribunalTypeLibelle": "Tribunal de Première Instance ",
+      "tribunalTypeLibelleArabe": "محكمة الدرجة الأولى",
+      "tribunalTypeDescription": "Tribunal compétent pour les affaires civiles et pénales.",
+      "tribunalTypeDescriptionArabe": "محكمة مختصة بالقضايا المدنية والجنائية.",
+      "tribunalTypeEtat": 0
+    },
+    {
+      "id": "2",
+      "tribunalTypeLibelle": "Tribunal d'Appel",
+      "tribunalTypeLibelleArabe": "محكمة الاستئناف",
+      "tribunalTypeDescription": "Tribunal chargé de réexaminer les décisions des tribunaux de première instance.",
+      "tribunalTypeDescriptionArabe": "محكمة معنية بإعادة النظر في قرارات محاكم الدرجة الأولى.",
+      "tribunalTypeEtat": 1
+    },
+    {
+      "id": "3",
+      "tribunalTypeLibelle": "Tribunal Administratif",
+      "tribunalTypeLibelleArabe": "المحكمة الإدارية",
+      "tribunalTypeDescription": "Tribunal compétent pour les litiges entre les citoyens et l'administration.",
+      "tribunalTypeDescriptionArabe": "محكمة مختصة بالنزاعات بين المواطنين والإدارة.",
+      "tribunalTypeEtat": 0
+    },
+    {
+      "id": "4",
+      "tribunalTypeLibelle": "Tribunal de Commerce ",
+      "tribunalTypeLibelleArabe": "محكمة التجارة",
+      "tribunalTypeDescription": "Tribunal compétent pour les affaires commerciales et les litiges entre commerçants.",
+      "tribunalTypeDescriptionArabe": "محكمة مختصة بالقضايا التجارية والنزاعات بين التجار.",
+      "tribunalTypeEtat": 1
+    },
+    {
+      "id": "5",
+      "tribunalTypeLibelle": "Tribunal des Enfants",
+      "tribunalTypeLibelleArabe": "محكمة الأطفال",
+      "tribunalTypeDescription": "Tribunal spécialisé dans les affaires concernant les mineurs.",
+      "tribunalTypeDescriptionArabe": "محكمة متخصصة في القضايا المتعلقة بالقصر.",
+      "tribunalTypeEtat": 0
+    }
+  ],
+  "professionnelTypes": [
+    {
+      "id": "1",
+      "professionnelTypeLibelle": "Avocat",
+      "professionnelTypeLibelleArabe": "محامي",
+      "professionnelTypeDescription": "Professionnel du droit qui conseille et représente les clients en matière juridique.",
+      "professionnelTypeDescriptionArabe": "ممارس للقانون يقدم المشورة ويمثل العملاء في القضايا القانونية."
+    },
+    {
+      "id": "2",
+      "professionnelTypeLibelle": "Notaire",
+      "professionnelTypeLibelleArabe": "موثق",
+      "professionnelTypeDescription": "Professionnel habilité à authentifier les actes et documents juridiques.",
+      "professionnelTypeDescriptionArabe": "ممارس مختص بتوثيق الأفعال والمستندات القانونية."
+    },
+    {
+      "id": "3",
+      "professionnelTypeLibelle": "Huissier de Justice",
+      "professionnelTypeLibelleArabe": "قاضي التنفيذ",
+      "professionnelTypeDescription": "Officier public chargé de la signification des actes et de l'exécution des décisions judiciaires.",
+      "professionnelTypeDescriptionArabe": "موظف عام مكلف بتبليغ الوثائق وتنفيذ القرارات القضائية."
+    },
+    {
+      "id": "4",
+      "professionnelTypeLibelle": "Expert-Comptable",
+      "professionnelTypeLibelleArabe": "محاسب قانوني",
+      "professionnelTypeDescription": "Professionnel spécialisé dans la comptabilité et l'audit financier des entreprises.",
+      "professionnelTypeDescriptionArabe": "ممارس متخصص في المحاسبة وتدقيق الحسابات المالية للشركات."
+    }
+  ],
+  "etats": [
+    {
+      "id": "2",
+      "etatLibelle": "Etat 1111 updated",
+      "etatLibelleArabe": "الحالة 1",
+      "etatDescription": "Description for Etat 141425",
+      "etatDescriptionArabe": "وصف للحالة 1",
+      "etatEtat": 1
+    },
+    {
+      "etatLibelle": "Etat 2",
+      "etatLibelleArabe": "الحالة 2",
+      "etatDescription": "Description for Etat 2",
+      "etatDescriptionArabe": "وصف للحالة 2",
+      "etatEtat": 0,
+      "id": "2"
+    },
+    {
+      "id": "21",
+      "etatLibelle": "Développeur ",
+      "etatLibelleArabe": "5555555555",
+      "etatDescription": "dddddddddddd",
+      "etatDescriptionArabe": "ddddddddddddddddddddd",
+      "etatEtat": 1
+    }
+  ],
+  "Gouvernorats": [
+    {
+      "id": "1",
+      "gouvernoratLibelle": "Tunis",
+      "gouvernoratLibelleArabe": "تونس",
+      "gouvernoratEtat": 1
+    },
+    {
+      "id": "2",
+      "gouvernoratLibelle": "Ariana",
+      "gouvernoratLibelleArabe": "أريانة",
+      "gouvernoratEtat": 1
+    },
+    {
+      "id": "3",
+      "gouvernoratLibelle": "Ben Arous ",
+      "gouvernoratLibelleArabe": "بن عروس",
+      "gouvernoratEtat": 1
+    },
+    {
+      "id": "4",
+      "gouvernoratLibelle": "Manouba",
+      "gouvernoratLibelleArabe": "منوبة",
+      "gouvernoratEtat": 1
+    },
+    {
+      "id": "5",
+      "gouvernoratLibelle": "Sfax",
+      "gouvernoratLibelleArabe": "صفاقس",
+      "gouvernoratEtat": 0
+    },
+    {
+      "id": "6",
+      "gouvernoratLibelle": "Sousse",
+      "gouvernoratLibelleArabe": "سوسة",
+      "gouvernoratEtat": 1
+    },
+    {
+      "id": "7",
+      "gouvernoratLibelle": "Gabès",
+      "gouvernoratLibelleArabe": "قابس",
+      "gouvernoratEtat": 0
+    },
+    {
+      "id": "8",
+      "gouvernoratLibelle": "Nabeul",
+      "gouvernoratLibelleArabe": "نابل",
+      "gouvernoratEtat": 1
+    },
+    {
+      "id": "9",
+      "gouvernoratLibelle": "Kairouan",
+      "gouvernoratLibelleArabe": "القيروان",
+      "gouvernoratEtat": 0
+    }
+  ],
+  "NotificationMoyens": [
+    {
+      "id": "1",
+      "notificationMoyenLibelle": "Email ",
+      "notificationMoyenLibelleArabe": "البريد الإلكتروني",
+      "notificationMoyenDescription": "Notification par courrier électronique.",
+      "notificationMoyenDescriptionArabe": "إشعار عبر البريد الإلكتروني.",
+      "notificationMoyenEtat": 1
+    },
+    {
+      "id": "2",
+      "notificationMoyenLibelle": "SMS",
+      "notificationMoyenLibelleArabe": "الرسائل النصية القصيرة",
+      "notificationMoyenDescription": "Notification par message texte.",
+      "notificationMoyenDescriptionArabe": "إشعار عبر رسالة نصية.",
+      "notificationMoyenEtat": 1
+    },
+    {
+      "id": "3",
+      "notificationMoyenLibelle": "Appel téléphonique",
+      "notificationMoyenLibelleArabe": "المكالمة الهاتفية",
+      "notificationMoyenDescription": "Notification par appel téléphonique.",
+      "notificationMoyenDescriptionArabe": "إشعار عبر مكالمة هاتفية.",
+      "notificationMoyenEtat": 0
+    },
+    {
+      "id": "4",
+      "notificationMoyenLibelle": "Courrier postal",
+      "notificationMoyenLibelleArabe": "البريد العادي",
+      "notificationMoyenDescription": "Notification par courrier postal.",
+      "notificationMoyenDescriptionArabe": "إشعار عبر البريد العادي.",
+      "notificationMoyenEtat": 0
+    }
+  ],
+  "JugementTypes": [
+    {
+      "id": "1",
+      "jugementTypeLibelle": "Jugement Civil ",
+      "jugementTypeLibelleArabe": "حكم مدني",
+      "jugementTypeDescription": "Un jugement portant sur une affaire civile.",
+      "jugementTypeDescriptionArabe": "حكم يتعلق بقضية مدنية.",
+      "jugementTypeEtat": 1
+    },
+    {
+      "id": "2",
+      "jugementTypeLibelle": "Jugement Pénal",
+      "jugementTypeLibelleArabe": "حكم جنائي",
+      "jugementTypeDescription": "Un jugement portant sur une affaire criminelle.",
+      "jugementTypeDescriptionArabe": "حكم يتعلق بقضية جنائية.",
+      "jugementTypeEtat": 1
+    },
+    {
+      "id": "3",
+      "jugementTypeLibelle": "Jugement Commercial",
+      "jugementTypeLibelleArabe": "حكم تجاري",
+      "jugementTypeDescription": "Un jugement concernant une dispute commerciale.",
+      "jugementTypeDescriptionArabe": "حكم يتعلق بنزاع تجاري.",
+      "jugementTypeEtat": 1
+    },
+    {
+      "id": "4",
+      "jugementTypeLibelle": "Jugement Administratif",
+      "jugementTypeLibelleArabe": "حكم إداري",
+      "jugementTypeDescription": "Un jugement rendu par un tribunal administratif.",
+      "jugementTypeDescriptionArabe": "حكم صادر عن محكمة إدارية.",
+      "jugementTypeEtat": 0
+    },
+    {
+      "id": "5",
+      "jugementTypeLibelle": "Jugement Social WiiiiiiiiiiiiiiiW",
+      "jugementTypeLibelleArabe": "حكم اجتماعي",
+      "jugementTypeDescription": "Un jugement relatif aux affaires sociales.",
+      "jugementTypeDescriptionArabe": "حكم يتعلق بالقضايا الاجتماعية.",
+      "jugementTypeEtat": 1
+    }
+  ],
+  "docTypes": [
+    {
+      "id": "1",
+      "documentTypeLibelle": "Contrat de travail",
+      "documentTypeLibelleArabe": "عقد عمل",
+      "documentTypeDescription": "Document utilisé pour formaliser la relation de travail entre l'employeur et l'employé.",
+      "documentTypeDescriptionArabe": "وثيقة تستخدم لتحديد العلاقة بين صاحب العمل والموظف.",
+      "documentTypeEtat": 1
+    },
+    {
+      "id": "2",
+      "documentTypeLibelle": "Passeport",
+      "documentTypeLibelleArabe": "جواز سفر",
+      "documentTypeDescription": "Document officiel délivré par le gouvernement qui certifie l'identité et la nationalité de son titulaire.",
+      "documentTypeDescriptionArabe": "وثيقة رسمية تصدرها الحكومة تثبت هوية وجنسية حاملها.",
+      "documentTypeEtat": 0
+    },
+    {
+      "id": "3",
+      "documentTypeLibelle": "Certificat de naissance",
+      "documentTypeLibelleArabe": "شهادة ميلاد",
+      "documentTypeDescription": "Document qui enregistre la naissance d'un individu, incluant son nom, date et lieu de naissance.",
+      "documentTypeDescriptionArabe": "وثيقة تسجل ولادة الفرد، تتضمن اسمه وتاريخ ومكان الميلاد.",
+      "documentTypeEtat": 0
+    },
+    {
+      "id": "4",
+      "documentTypeLibelle": "Carte d'identité nationale",
+      "documentTypeLibelleArabe": "بطاقة هوية وطنية",
+      "documentTypeDescription": "Document d'identification émis par le gouvernement, attestant de l'identité d'un citoyen.",
+      "documentTypeDescriptionArabe": "وثيقة تعريف صادرة عن الحكومة، تثبت هوية المواطن.",
+      "documentTypeEtat": 1
+    },
+    {
+      "id": "5",
+      "documentTypeLibelle": "Diplôme universitaire",
+      "documentTypeLibelleArabe": "شهادة جامعية",
+      "documentTypeDescription": "Document officiel qui atteste de la réussite des études universitaires.",
+      "documentTypeDescriptionArabe": "وثيقة رسمية تثبت النجاح في الدراسات الجامعية.",
+      "documentTypeEtat": 1
+    }
+  ],
+  "contentieuxTypes": [
+    {
+      "id": "1",
+      "contentieuxTypeLibelle": "Type A updated",
+      "contentieuxTypeLibelleArabe": "النوع أ",
+      "contentieuxTypeDescription": "Description for Type A",
+      "contentieuxTypeDescriptionArabe": "وصف للنوع أ",
+      "contentieuxTypeEtat": 1
+    }
+  ],
+  "clientTypes": [
+    {
+      "id": "1",
+      "clientTypeLibelle": "Client Standard",
+      "clientTypeLibelleArabe": "عميل عادي",
+      "clientTypeEtat": 1
+    },
+    {
+      "id": "2",
+      "clientTypeLibelle": "Client Premium",
+      "clientTypeLibelleArabe": "عميل مميز",
+      "clientTypeEtat": 1
+    },
+    {
+      "id": "3",
+      "clientTypeLibelle": "Client Entreprise",
+      "clientTypeLibelleArabe": "عميل مؤسسة",
+      "clientTypeEtat": 0
+    }
+  ],
+  "bureauTypes": [
+    {
+      "id": "2",
+      "bureauTypeLibelle": "Bureau Technique",
+      "bureauTypeLibelleArabe": "مكتب تقني",
+      "bureauTypeDescription": "Bureau dédié aux fonctions techniques.",
+      "bureauTypeDescriptionArabe": "مكتب مخصص للوظائف التقنية.",
+      "bureauTypeEtat": 1
+    },
+    {
+      "id": "3",
+      "bureauTypeLibelle": "Bureau de Vente uppp",
+      "bureauTypeLibelleArabe": "مكتب مبيعات",
+      "bureauTypeDescription": "Bureau pour les opérations de vente et de marketing.",
+      "bureauTypeDescriptionArabe": "مكتب للعمليات البيعية والتسويقية.",
+      "bureauTypeEtat": 1
+    },
+    {
+      "id": "4",
+      "bureauTypeLibelle": "Bureau de Support",
+      "bureauTypeLibelleArabe": "مكتب دعم",
+      "bureauTypeDescription": "Bureau pour le support technique et client.",
+      "bureauTypeDescriptionArabe": "مكتب للدعم الفني والعملاء.",
+      "bureauTypeEtat": 1
+    },
+    {
+      "id": "5",
+      "bureauTypeLibelle": "Bureau de Recherche",
+      "bureauTypeLibelleArabe": "مكتب بحث",
+      "bureauTypeDescription": "Bureau dédié à la recherche et au développement.",
+      "bureauTypeDescriptionArabe": "مكتب مخصص للبحث والتطوير.",
+      "bureauTypeEtat": 1
+    }
+  ],
+  "bureauSpecialites": [
+    {
+      "id": "1",
+      "bureauSpecialiteLibelle": "Cardiologie",
+      "bureauSpecialiteLibelleArabe": "طب القلب",
+      "bureauSpecialiteDescription": "Spécialité médicale dédiée au diagnostic et au traitement des maladies du cœur.",
+      "bureauSpecialiteDescriptionArabe": "اختصاص طبي مخصص لتشخيص وعلاج أمراض القلب.",
+      "bureauSpecialiteEtat": 1
+    },
+    {
+      "id": "2",
+      "bureauSpecialiteLibelle": "Neurologie",
+      "bureauSpecialiteLibelleArabe": "علم الأعصاب",
+      "bureauSpecialiteDescription": "Spécialité médicale dédiée au diagnostic et au traitement des troubles du système nerveux.",
+      "bureauSpecialiteDescriptionArabe": "اختصاص طبي مخصص لتشخيص وعلاج اضطرابات الجهاز العصبي.",
+      "bureauSpecialiteEtat": 1
+    },
+    {
+      "id": "3",
+      "bureauSpecialiteLibelle": "Dermatologie",
+      "bureauSpecialiteLibelleArabe": "الأمراض الجلدية",
+      "bureauSpecialiteDescription": "Spécialité médicale dédiée au diagnostic et au traitement des maladies de la peau.",
+      "bureauSpecialiteDescriptionArabe": "اختصاص طبي مخصص لتشخيص وعلاج أمراض الجلد.",
+      "bureauSpecialiteEtat": 0
+    }
+  ],
+  "AvocatSpecialites": [
+    {
+      "id": "1",
+      "avocatSpecialiteLibelle": "Droit Civil",
+      "avocatSpecialiteLibelleArabe": "القانون المدني",
+      "avocatSpecialiteDescription": "Spécialisation en droit civil général.",
+      "avocatSpecialiteDescriptionArabe": "تخصص في القانون المدني العام.",
+      "avocatSpecialiteEtat": "1"
+    },
+    {
+      "id": "2",
+      "avocatSpecialiteLibelle": "Droit Pénal",
+      "avocatSpecialiteLibelleArabe": "القانون الجنائي",
+      "avocatSpecialiteDescription": "Spécialisation en droit pénal et procédures criminelles.",
+      "avocatSpecialiteDescriptionArabe": "تخصص في القانون الجنائي والإجراءات الجنائية.",
+      "avocatSpecialiteEtat": "1"
+    },
+    {
+      "id": "3",
+      "avocatSpecialiteLibelle": "Droit Commercial",
+      "avocatSpecialiteLibelleArabe": "القانون التجاري",
+      "avocatSpecialiteDescription": "Spécialisation en droit commercial et des affaires.",
+      "avocatSpecialiteDescriptionArabe": "تخصص في القانون التجاري والأعمال.",
+      "avocatSpecialiteEtat": "0"
+    },
+    {
+      "id": "4",
+      "avocatSpecialiteLibelle": "Droit de la Famille",
+      "avocatSpecialiteLibelleArabe": "قانون الأسرة",
+      "avocatSpecialiteDescription": "Spécialisation en droit de la famille et des successions.",
+      "avocatSpecialiteDescriptionArabe": "تخصص في قانون الأسرة والمواريث.",
+      "avocatSpecialiteEtat": "1"
+    },
+    {
+      "id": "5",
+      "avocatSpecialiteLibelle": "Droit International",
+      "avocatSpecialiteLibelleArabe": "القانون الدولي",
+      "avocatSpecialiteDescription": "Spécialisation en droit international et relations internationales.",
+      "avocatSpecialiteDescriptionArabe": "تخصص في القانون الدولي والعلاقات الدولية.",
+      "avocatSpecialiteEtat": "0"
+    }
+  ],
+  "affaireSens": [
+    {
+      "id": "1",
+      "affaireSensLibelle": "Affaire Civile",
+      "affaireSensLibelleArabe": "قضية مدنية",
+      "affaireSensEtat": 1
+    },
+    {
+      "id": "2",
+      "affaireSensLibelle": "Affaire Pénale",
+      "affaireSensLibelleArabe": "قضية جنائية",
+      "affaireSensEtat": 1
+    },
+    {
+      "id": "3",
+      "affaireSensLibelle": "Affaire Commerciale",
+      "affaireSensLibelleArabe": "قضية تجارية",
+      "affaireSensEtat": 0
+    },
+    {
+      "id": "4",
+      "affaireSensLibelle": "Affaire Administrative",
+      "affaireSensLibelleArabe": "قضية إدارية",
+      "affaireSensEtat": 1
+    },
+    {
+      "id": "5",
+      "affaireSensLibelle": "Affaire Familiale ",
+      "affaireSensLibelleArabe": "قضية عائلية",
+      "affaireSensEtat": 0
+    }
+  ],
+  "Bureau": [
+    {
+      "id": "1",
+      "bureauRaisonSocial": "Bureau Central",
+      "bureauRaisonSocialArabe": "المكتب المركزي",
+      "bureauPersonneContact": "John Doe upppp",
+      "bureauPersonneContactArabe": "جون دو",
+      "bureauTelephone": "123-456-7890",
+      "bureauGsm": "098-765-4321",
+      "bureauFax": "123-456-7891",
+      "bureauAdresse": "123 Main St, City, Country",
+      "bureauAdresseArabe": "123 الشارع الرئيسي، المدينة، البلد",
+      "bureauCodePostal": "12345",
+      "bureauEmail": "contact@bureaucentral.com"
+    },
+    {
+      "id": "2",
+      "bureauRaisonSocial": "Bureau Régional",
+      "bureauRaisonSocialArabe": "المكتب الإقليمي",
+      "bureauPersonneContact": "Jane Smith ",
+      "bureauPersonneContactArabe": "جين سميث",
+      "bureauTelephone": "234-567-8901",
+      "bureauGsm": "987-654-3210",
+      "bureauFax": "234-567-8902",
+      "bureauAdresse": "456 Elm St, City, Country",
+      "bureauAdresseArabe": "456 شارع الدردار، المدينة، البلد",
+      "bureauCodePostal": "23456",
+      "bureauEmail": "contact@bureauregional.com"
+    }
+  ],
+  "ExpertCompetence": [
+    {
+      "id": "1",
+      "expertCompetenceLibelle": "Développement Web",
+      "expertCompetenceLibelleArabe": "تطوير الويب",
+      "expertCompetenceDescription": "Compétence en développement d'applications web, y compris les technologies front-end et back-end.",
+      "expertCompetenceDescriptionArabe": "القدرة على تطوير تطبيقات الويب ، بما في ذلك تقنيات الواجهة الأمامية والخلفية."
+    },
+    {
+      "id": "2",
+      "expertCompetenceLibelle": "Gestion de Projet",
+      "expertCompetenceLibelleArabe": "إدارة المشاريع",
+      "expertCompetenceDescription": "Compétence en planification, organisation et gestion de projets pour assurer leur succès.",
+      "expertCompetenceDescriptionArabe": "القدرة على تخطيط وتنظيم وإدارة المشاريع لضمان نجاحها."
+    },
+    {
+      "id": "3",
+      "expertCompetenceLibelle": "Analyse de Données ",
+      "expertCompetenceLibelleArabe": "تحليل البيانات",
+      "expertCompetenceDescription": "Compétence en analyse de données pour tirer des conclusions et prendre des décisions éclairées.",
+      "expertCompetenceDescriptionArabe": "القدرة على تحليل البيانات لاستخلاص النتائج واتخاذ قرارات مستنيرة."
+    },
+    {
+      "id": "4",
+      "expertCompetenceLibelle": "Sécurité Informatique",
+      "expertCompetenceLibelleArabe": "أمن المعلومات",
+      "expertCompetenceDescription": "Compétence en protection des systèmes informatiques contre les menaces et les attaques.",
+      "expertCompetenceDescriptionArabe": "القدرة على حماية الأنظمة الحاسوبية من التهديدات والهجمات."
+    }
+  ],
+  "Etablissement": [
+    {
+      "id": "1",
+      "etablissementLibelle": "Hôpital Général",
+      "etablissementTelephone": "+123456789",
+      "etablissementAdresse": "123 Rue de la Santé, Paris, France"
+    },
+    {
+      "id": "2",
+      "etablissementLibelle": "École Primaire Jean Jaurès",
+      "etablissementTelephone": "+987654321",
+      "etablissementAdresse": "45 Avenue des Écoles, Lyon, France"
+    },
+    {
+      "id": "3",
+      "etablissementLibelle": "Centre Commercial Lafayette",
+      "etablissementTelephone": "+216264455",
+      "etablissementAdresse": "78 Boulevard de la Liberté, Marseille, France"
+    },
+    {
+      "id": "4",
+      "etablissementLibelle": "Bibliothèque Municipale",
+      "etablissementTelephone": "+5566778899",
+      "etablissementAdresse": "9 Place de la Culture, Toulouse, France"
+    },
+    {
+      "id": "5",
+      "etablissementLibelle": "Gymnase Sportif",
+      "etablissementTelephone": "+4433221100",
+      "etablissementAdresse": "67 Rue des Sports, Nice, France"
+    }
+  ],
+  "ContentieuxSujet": [
+    {
+      "id": "1",
+      "contentieuxSujetLibelle": "Contrat de travail",
+      "contentieuxSujetLibelleArabe": "عقد العمل",
+      "contentieuxDescription": "Litiges concernant les contrats de travail et les conditions de travail.",
+      "contentieuxDescriptionArabe": "المنازعات المتعلقة بعقود العمل وظروف العمل.",
+      "contentieuxSujetEtat": 1
+    },
+    {
+      "id": "2",
+      "contentieuxSujetLibelle": "Droit fiscal ",
+      "contentieuxSujetLibelleArabe": "الحق الضريبي",
+      "contentieuxDescription": "Questions juridiques liées aux obligations fiscales et aux litiges fiscaux.",
+      "contentieuxDescriptionArabe": "القضايا القانونية المتعلقة بالالتزامات الضريبية والنزاعات الضريبية.",
+      "contentieuxSujetEtat": 0
+    },
+    {
+      "id": "3",
+      "contentieuxSujetLibelle": "Droit de la propriété intellectuelle",
+      "contentieuxSujetLibelleArabe": "حقوق الملكية الفكرية",
+      "contentieuxDescription": "Litiges concernant les droits d'auteur, les brevets et les marques.",
+      "contentieuxDescriptionArabe": "المنازعات المتعلقة بحقوق النشر وبراءات الاختراع والعلامات التجارية.",
+      "contentieuxSujetEtat": 1
+    },
+    {
+      "id": "4",
+      "contentieuxSujetLibelle": "Responsabilité civile ",
+      "contentieuxSujetLibelleArabe": "المسؤولية المدنية",
+      "contentieuxDescription": "Litiges concernant la responsabilité pour les dommages causés à des tiers.",
+      "contentieuxDescriptionArabe": "المنازعات المتعلقة بالمسؤولية عن الأضرار التي لحقت بأطراف ثالثة.",
+      "contentieuxSujetEtat": 1
+    },
+    {
+      "id": "5",
+      "contentieuxSujetLibelle": "Droit de la famille",
+      "contentieuxSujetLibelleArabe": "قانون الأسرة",
+      "contentieuxDescription": "Questions juridiques liées au divorce, à la garde des enfants et aux pensions alimentaires.",
+      "contentieuxDescriptionArabe": "القضايا القانونية المتعلقة بالطلاق وحضانة الأطفال والنفقة.",
+      "contentieuxSujetEtat": 0
+    },
+    {
+      "id": "6",
+      "contentieuxSujetLibelle": "Droit commercial",
+      "contentieuxSujetLibelleArabe": "القانون التجاري",
+      "contentieuxDescription": "Litiges liés aux contrats commerciaux, à la faillite et aux litiges entre entreprises.",
+      "contentieuxDescriptionArabe": "المنازعات المتعلقة بالعقود التجارية والإفلاس والنزاعات بين الشركات.",
+      "contentieuxSujetEtat": 1
+    },
+    {
+      "id": "7",
+      "contentieuxSujetLibelle": "Droit immobilier",
+      "contentieuxSujetLibelleArabe": "القانون العقاري",
+      "contentieuxDescription": "Questions juridiques concernant les transactions immobilières et les litiges de propriété.",
+      "contentieuxDescriptionArabe": "القضايا القانونية المتعلقة بالمعاملات العقارية والنزاعات المتعلقة بالملكية.",
+      "contentieuxSujetEtat": 0
+    },
+    {
+      "id": "8",
+      "contentieuxSujetLibelle": "Droit de l'environnement",
+      "contentieuxSujetLibelleArabe": "قانون البيئة",
+      "contentieuxDescription": "Litiges concernant la protection de l'environnement et les violations des règlements environnementaux.",
+      "contentieuxDescriptionArabe": "المنازعات المتعلقة بحماية البيئة وانتهاكات اللوائح البيئية.",
+      "contentieuxSujetEtat": 1
+    },
+    {
+      "id": "9",
+      "contentieuxSujetLibelle": "Droit pénal",
+      "contentieuxSujetLibelleArabe": "القانون الجنائي",
+      "contentieuxDescription": "Questions juridiques liées aux infractions pénales et aux procédures judiciaires pénales.",
+      "contentieuxDescriptionArabe": "القضايا القانونية المتعلقة بالجرائم والإجراءات القضائية الجنائية.",
+      "contentieuxSujetEtat": 0
+    },
+    {
+      "id": "10",
+      "contentieuxSujetLibelle": "Droit du travail",
+      "contentieuxSujetLibelleArabe": "قانون العمل",
+      "contentieuxDescription": "Litiges concernant les relations de travail, les conditions d'emploi et les droits des travailleurs.",
+      "contentieuxDescriptionArabe": "المنازعات المتعلقة بعلاقات العمل وظروف العمل وحقوق العمال.",
+      "contentieuxSujetEtat": 1
+    }
+  ],
+  "dossierAxes": [
+    {
+      "id": "1",
+      "dossierAxeLibelle": "Axe de Développement Durable",
+      "dossierAxeLibelleArabe": "محور التنمية المستدامة",
+      "dossierAxeDescription": "Axe stratégique pour le développement durable incluant des initiatives environnementales et sociales.",
+      "dossierAxeDescriptionArabe": "محور استراتيجي للتنمية المستدامة يشمل المبادرات البيئية والاجتماعية.",
+      "dossierAxeEtat": 0
+    },
+    {
+      "id": "2",
+      "dossierAxeLibelle": "Axe d'Innovation Technologique ",
+      "dossierAxeLibelleArabe": "محور الابتكار التكنولوجي",
+      "dossierAxeDescription": "Axe dédié à l'innovation technologique et à la recherche avancée.",
+      "dossierAxeDescriptionArabe": "محور مخصص للابتكار التكنولوجي والبحث المتقدم.",
+      "dossierAxeEtat": 1
+    },
+    {
+      "id": "3",
+      "dossierAxeLibelle": "Axe de Renforcement des Capacités ",
+      "dossierAxeLibelleArabe": "محور تعزيز القدرات",
+      "dossierAxeDescription": "Axe axé sur le renforcement des compétences et des capacités organisationnelles.",
+      "dossierAxeDescriptionArabe": "محور يركز على تعزيز المهارات والقدرات التنظيمية.",
+      "dossierAxeEtat": 1
+    },
+    {
+      "id": "4",
+      "dossierAxeLibelle": "Axe de Promotion de l'Entrepreneuriat",
+      "dossierAxeLibelleArabe": "محور تعزيز ريادة الأعمال",
+      "dossierAxeDescription": "Axe visant à promouvoir l'entrepreneuriat et à soutenir les start-ups.",
+      "dossierAxeDescriptionArabe": "محور يهدف إلى تعزيز ريادة الأعمال ودعم الشركات الناشئة.",
+      "dossierAxeEtat": 1
+    }
+  ],
+  "DossierPieceJointe": [
+    {
+      "id": "1",
+      "dossierPieceJointeLibelle": "Contrat de travail",
+      "dossierPieceJointeLibelleArabe": "عقد العمل",
+      "dossierPieceJointeObligatoire": 0,
+      "dossierPieceJointeOriginale": 0,
+      "dossierPieceJointeOrdre": 1,
+      "dossierPieceJointeDescription": "Le contrat de travail signé entre l'employeur et l'employé.",
+      "dossierPieceJointeDescriptionArabe": "عقد العمل الموقع بين صاحب العمل والموظف.",
+      "dossierPieceJointeEtat": 0
+    },
+    {
+      "id": "2",
+      "dossierPieceJointeLibelle": "Certificat de scolarité",
+      "dossierPieceJointeLibelleArabe": "شهادة الدراسة",
+      "dossierPieceJointeObligatoire": 1,
+      "dossierPieceJointeOriginale": 0,
+      "dossierPieceJointeOrdre": 2,
+      "dossierPieceJointeDescription": "Certificat confirmant la scolarité de l'individu.",
+      "dossierPieceJointeDescriptionArabe": "شهادة تؤكد الدراسة للفرد.",
+      "dossierPieceJointeEtat": 1
+    },
+    {
+      "id": "3",
+      "dossierPieceJointeLibelle": "Carte d'identité",
+      "dossierPieceJointeLibelleArabe": "بطاقة الهوية",
+      "dossierPieceJointeObligatoire": 0,
+      "dossierPieceJointeOriginale": 1,
+      "dossierPieceJointeOrdre": 3,
+      "dossierPieceJointeDescription": "Carte d'identité officielle de l'individu.",
+      "dossierPieceJointeDescriptionArabe": "بطاقة الهوية الرسمية للفرد.",
+      "dossierPieceJointeEtat": 0
+    },
+    {
+      "id": "4",
+      "dossierPieceJointeLibelle": "Relevé bancaire",
+      "dossierPieceJointeLibelleArabe": "كشف حساب مصرفي",
+      "dossierPieceJointeObligatoire": 0,
+      "dossierPieceJointeOriginale": 0,
+      "dossierPieceJointeOrdre": 4,
+      "dossierPieceJointeDescription": "Relevé bancaire des trois derniers mois.",
+      "dossierPieceJointeDescriptionArabe": "كشف حساب مصرفي لآخر ثلاثة أشهر.",
+      "dossierPieceJointeEtat": 0
+    },
+    {
+      "id": "5",
+      "dossierPieceJointeLibelle": "Permis de conduire",
+      "dossierPieceJointeLibelleArabe": "رخصة القيادة",
+      "dossierPieceJointeObligatoire": 0,
+      "dossierPieceJointeOriginale": 1,
+      "dossierPieceJointeOrdre": 5,
+      "dossierPieceJointeDescription": "Permis de conduire valide de l'individu.",
+      "dossierPieceJointeDescriptionArabe": "رخصة القيادة الصالحة للفرد.",
+      "dossierPieceJointeEtat": 1
+    }
+  ],
+  "preContentieuxTypes": [
+    {
+      "id": "1",
+      "preContentieuxTypeCategorieRef": 101,
+      "preContentieuxTypeLibelle": "Médiation",
+      "preContentieuxTypeLibelleArabe": "الوساطة",
+      "preContentieuxTypeDescription": "Procédure visant à trouver un accord amiable entre les parties.",
+      "preContentieuxTypeDescriptionArabe": "إجراء يهدف إلى إيجاد تسوية ودية بين الأطراف.",
+      "preContentieuxTypeDelai": 30,
+      "preContentieuxTypeEtat": 1
+    },
+    {
+      "id": "2",
+      "preContentieuxTypeCategorieRef": 102,
+      "preContentieuxTypeLibelle": "Conciliation update",
+      "preContentieuxTypeLibelleArabe": "المصالحة",
+      "preContentieuxTypeDescription": "Processus où un tiers neutre aide les parties à trouver un accord.",
+      "preContentieuxTypeDescriptionArabe": "عملية يقوم فيها طرف محايد بمساعدة الأطراف في التوصل إلى اتفاق.",
+      "preContentieuxTypeDelai": 15,
+      "preContentieuxTypeEtat": 1
+    },
+    {
+      "id": "3",
+      "preContentieuxTypeCategorieRef": 103,
+      "preContentieuxTypeLibelle": "Arbitrage",
+      "preContentieuxTypeLibelleArabe": "التحكيم",
+      "preContentieuxTypeDescription": "Méthode de résolution des conflits où un arbitre rend une décision contraignante.",
+      "preContentieuxTypeDescriptionArabe": "طريقة لحل النزاعات حيث يصدر الحكم قرارًا ملزمًا.",
+      "preContentieuxTypeDelai": 60,
+      "preContentieuxTypeEtat": 0
+    }
+  ],
+  "dossierCategories": [
+    {
+      "id": "1",
+      "dossierAxeRef": 101,
+      "dossierCategorieLibelle": "Catégorie A",
+      "dossierCategorieLibelleArabe": "الفئة أ",
+      "dossierCategorieDescription": "Description détaillée de la Catégorie A.",
+      "dossierCategorieDescriptionArabe": "وصف مفصل للفئة أ.",
+      "dossierCategorieEtat": 1
+    },
+    {
+      "id": "2",
+      "dossierAxeRef": 102,
+      "dossierCategorieLibelle": "Catégorie B upppppp",
+      "dossierCategorieLibelleArabe": "الفئة ب",
+      "dossierCategorieDescription": "Description détaillée de la Catégorie B.",
+      "dossierCategorieDescriptionArabe": "وصف مفصل للفئة ب.",
+      "dossierCategorieEtat": 0
+    },
+    {
+      "id": "3",
+      "dossierAxeRef": 103,
+      "dossierCategorieLibelle": "Catégorie C",
+      "dossierCategorieLibelleArabe": "الفئة ج",
+      "dossierCategorieDescription": "Description détaillée de la Catégorie C.",
+      "dossierCategorieDescriptionArabe": "وصف مفصل للفئة ج.",
+      "dossierCategorieEtat": 1
+    },
+    {
+      "id": "4",
+      "dossierAxeRef": 104,
+      "dossierCategorieLibelle": "Catégorie D",
+      "dossierCategorieLibelleArabe": "الفئة د",
+      "dossierCategorieDescription": "Description détaillée de la Catégorie D.",
+      "dossierCategorieDescriptionArabe": "وصف مفصل للفئة د.",
+      "dossierCategorieEtat": 0
+    }
+  ]
+}

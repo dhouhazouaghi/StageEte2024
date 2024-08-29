@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="addTribunalTypeTitle" datatype="html">
+        <source>Ajouter un tribunal type</source>
+        <target>Add a tribunal type</target>
+      </trans-unit>
+      <trans-unit id="etatLabel" datatype="html">
+        <source>État</source>
+        <target>Status</target>
+      </trans-unit>
+      <trans-unit id="libelleLabel" datatype="html">
+        <source>Libelle <span class="text-danger">*</span></source>
+        <target>Label <span class="text-danger">*</span></target>
+      </trans-unit>
+      <trans-unit id="libelleRequired" datatype="html">
+        <source>Libelle est requis.</source>
+        <target>Label is required.</target>
+      </trans-unit>
+      <trans-unit id="libelleArabeLabel" datatype="html">
+        <source>Libelle Arabe <span class="text-danger">*</span></source>
+        <target>Arabic Label <span class="text-danger">*</span></target>
+      </trans-unit>
+      <trans-unit id="libelleArabeRequired" datatype="html">
+        <source>Libelle Arabe est requis.</source>
+        <target>Arabic Label is required.</target>
+      </trans-unit>
+      <trans-unit id="descriptionLabel" datatype="html">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="descriptionRequired" datatype="html">
+        <source>Description est requise.</source>
+        <target>Description is required.</target>
+      </trans-unit>
+      <trans-unit id="descriptionMinLength" datatype="html">
+        <source>Description doit comporter au moins 10 caractères.</source>
+        <target>Description must be at least 10 characters long.</target>
+      </trans-unit>
+      <trans-unit id="descriptionMaxLength" datatype="html">
+        <source>Description ne peut pas dépasser 1000 caractères.</source>
+        <target>Description cannot exceed 1000 characters.</target>
+      </trans-unit>
+      <trans-unit id="descriptionArabeLabel" datatype="html">
+        <source>Description Arabe</source>
+        <target>Arabic Description</target>
+      </trans-unit>
+      <trans-unit id="descriptionArabeRequired" datatype="html">
+        <source>Description Arabe est requise.</source>
+        <target>Arabic Description is required.</target>
+      </trans-unit>
+      <trans-unit id="descriptionArabeMinLength" datatype="html">
+        <source>Description Arabe doit comporter au moins 10 caractères.</source>
+        <target>Arabic Description must be at least 10 characters long.</target>
+      </trans-unit>
+      <trans-unit id="descriptionArabeMaxLength" datatype="html">
+        <source>Description Arabe ne peut pas dépasser 1000 caractères.</source>
+        <target>Arabic Description cannot exceed 1000 characters.</target>
+      </trans-unit>
+      <trans-unit id="validateButton" datatype="html">
+        <source>Valider</source>
+        <target>Validate</target>
+      </trans-unit>
+      <trans-unit id="cancelButton" datatype="html">
+        <source>Annuler</source>
+        <target>Cancel</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

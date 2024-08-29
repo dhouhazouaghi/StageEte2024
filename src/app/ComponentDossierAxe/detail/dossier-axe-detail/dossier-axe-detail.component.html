@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+    <div class="container-fluid" style="width: 100%;">
+      <div *ngIf="dossierAxe; else noData">
+        <div class="card border-success mt-3">
+          <div class="card-header" style="background-color: #829B66; color: white;">
+            <h5 class="card-title mb-0">Détails de Dossier Axe: {{ dossierAxe.dossierAxeLibelle }}</h5>
+          </div>
+          <div class="card-body" style="padding: 1rem;">
+            <p class="card-text"><strong>État:</strong> {{ dossierAxe.dossierAxeEtat }}</p>
+  
+            <p class="card-text"><strong>Libellé:</strong> {{ dossierAxe.dossierAxeLibelle }}</p>
+            <p class="card-text"><strong>Libellé Arabe:</strong> {{ dossierAxe.dossierAxeLibelleArabe }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ dossierAxe.dossierAxeDescription }}</p>
+            <p class="card-text"><strong>Description Arabe:</strong> {{ dossierAxe.dossierAxeDescriptionArabe }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <ng-template #noData>
+        <div class="alert alert-warning mt-3" role="alert">
+          Aucun détail disponible pour ce Dossier Axe.
+        </div>
+      </ng-template>
+      <div class="mt-3">
+        <a routerLink="/DossierAxesList" class="btn btn-secondary">
+          <i class="fas fa-arrow-left mr-1"></i> Retour
+        </a>
+      </div>
+    </div>
+  </div>
+  

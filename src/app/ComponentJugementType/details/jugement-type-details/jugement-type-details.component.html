@@ -1,0 +1,30 @@
+<div class="container-fluid p-0">
+  <div class="container-fluid" style="width: 100%;">
+    <div *ngIf="jugementType; else noData">
+      <div class="card border-success mt-3">
+        <div class="card-header" style="background-color: #829B66; color: white;">
+          <h5 class="card-title mb-0"> Details de Jugement Type : {{ jugementType.jugementTypeLibelle }}</h5>
+        </div>
+        <div class="card-body" style="padding: 1rem;">
+          <p class="card-text"><strong>Etat:</strong> {{ jugementType.jugementTypeEtat}}</p>
+          <p class="card-text"><strong>Libellé:</strong> {{ jugementType.jugementTypeLibelle}}</p>
+          <p class="card-text"><strong>Libellé Arabe:</strong> {{ jugementType.jugementTypeLibelleArabe }}</p>
+          <p class="card-text"><strong>Description:</strong> {{ jugementType.jugementTypeDescription }}</p>
+          <p class="card-text"><strong>Description Arabe:</strong> {{ jugementType.jugementTypeDescriptionArabe }}</p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noData>
+      <div class="alert alert-warning mt-3" role="alert">
+        Aucun détail disponible pour ce jugement Type.
+      </div>
+    </ng-template>
+    <div class="mt-3">
+      <a routerLink="/jugement" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-1"></i> Retour
+      </a>
+    </div>
+    
+  </div>
+</div>

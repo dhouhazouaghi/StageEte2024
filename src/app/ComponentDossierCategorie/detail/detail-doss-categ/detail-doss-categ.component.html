@@ -1,0 +1,33 @@
+<div class="container-fluid p-0">
+    <div class="container-fluid" style="width: 100%;">
+      <div *ngIf="dossierCategorie; else noData">
+        <div class="card border-success mt-3">
+          <div class="card-header" style="background-color: #829B66; color: white;">
+            <h5 class="card-title mb-0">
+              Détails de la catégorie de dossier {{ dossierCategorie.dossierCategorieLibelle }}
+            </h5>
+          </div>
+          <div class="card-body" style="padding: 1rem;">
+            <p class="card-text"><strong>Référence Axe:</strong> {{ dossierCategorie.dossierAxeRef }}</p>
+            <p class="card-text"><strong>Libellé:</strong> {{ dossierCategorie.dossierCategorieLibelle }}</p>
+            <p class="card-text"><strong>Libellé Arabe:</strong> {{ dossierCategorie.dossierCategorieLibelleArabe }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ dossierCategorie.dossierCategorieDescription }}</p>
+            <p class="card-text"><strong>Description Arabe:</strong> {{ dossierCategorie.dossierCategorieDescriptionArabe }}</p>
+            <p class="card-text"><strong>État:</strong> {{ dossierCategorie.dossierCategorieEtat === 1 ? 'Actif' : 'Inactif' }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <ng-template #noData>
+        <div class="alert alert-warning mt-3" role="alert">
+          Aucun détail disponible pour cette catégorie de dossier.
+        </div>
+      </ng-template>
+      <div class="mt-3">
+        <a routerLink="/dossier-categories" class="btn btn-secondary">
+          <i class="fas fa-arrow-left mr-1"></i> Retour
+        </a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,69 @@
+<div class="container-fluid mt-5">
+  <div class="card" style="width: 100%;">
+    <div class="card-header" style="background-color: #829B66; color: white;">
+      <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@updateProfessionalTypeTitle">Modifier un Type de Professionnel</h4>
+    </div>
+    <div class="card-body p-5">
+      <form [formGroup]="proTypeForm" (ngSubmit)="updateProfessionnelType()" class="row g-3">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="professionnelTypeLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+              Libellé <span class="text-danger">*</span>
+            </label>
+            <input id="professionnelTypeLibelle" type="text" class="form-control green-border" formControlName="professionnelTypeLibelle" required>
+            <div *ngIf="proTypeForm.controls['professionnelTypeLibelle'].invalid && (proTypeForm.controls['professionnelTypeLibelle'].dirty || proTypeForm.controls['professionnelTypeLibelle'].touched)">
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeLibelle'].errors?.['required']" i18n="@@libelleRequired">Libellé est requis.</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="professionnelTypeLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+              Libellé Arabe <span class="text-danger">*</span>
+            </label>
+            <input id="professionnelTypeLibelleArabe" type="text" class="form-control green-border" formControlName="professionnelTypeLibelleArabe" required>
+            <div *ngIf="proTypeForm.controls['professionnelTypeLibelleArabe'].invalid && (proTypeForm.controls['professionnelTypeLibelleArabe'].dirty || proTypeForm.controls['professionnelTypeLibelleArabe'].touched)">
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libellé Arabe est requis.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="professionnelTypeDescription" class="form-label bold-label" i18n="@@descriptionLabel">Description</label>
+            <div class="position-relative">
+              <textarea id="professionnelTypeDescription" class="form-control green-border" formControlName="professionnelTypeDescription" rows="3" maxlength="1000" required></textarea>
+              <div class="text-end mt-2">
+                <small class="text-muted">{{proTypeForm.controls['professionnelTypeDescription'].value?.length || 0}}/1000</small>
+              </div>
+            </div>
+            <div *ngIf="proTypeForm.controls['professionnelTypeDescription'].invalid && (proTypeForm.controls['professionnelTypeDescription'].dirty || proTypeForm.controls['professionnelTypeDescription'].touched)">
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeDescription'].errors?.['required']" i18n="@@descriptionRequired">Description est requise.</small>
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeDescription'].errors?.['minlength']" i18n="@@descriptionMinLength">Description doit comporter au moins 10 caractères.</small>
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeDescription'].errors?.['maxlength']" i18n="@@descriptionMaxLength">Description ne peut pas dépasser 1000 caractères.</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="professionnelTypeDescriptionArabe" class="form-label bold-label" i18n="@@descriptionArabeLabel">Description Arabe</label>
+            <div class="position-relative">
+              <textarea id="professionnelTypeDescriptionArabe" class="form-control green-border" formControlName="professionnelTypeDescriptionArabe" rows="3" maxlength="1000" required></textarea>
+              <div class="text-end mt-2">
+                <small class="text-muted">{{proTypeForm.controls['professionnelTypeDescriptionArabe'].value?.length || 0}}/1000</small>
+              </div>
+            </div>
+            <div *ngIf="proTypeForm.controls['professionnelTypeDescriptionArabe'].invalid && (proTypeForm.controls['professionnelTypeDescriptionArabe'].dirty || proTypeForm.controls['professionnelTypeDescriptionArabe'].touched)">
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeDescriptionArabe'].errors?.['required']" i18n="@@descriptionArabeRequired">Description Arabe est requise.</small>
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeDescriptionArabe'].errors?.['minlength']" i18n="@@descriptionArabeMinLength">Description Arabe doit comporter au moins 10 caractères.</small>
+              <small class="text-danger" *ngIf="proTypeForm.controls['professionnelTypeDescriptionArabe'].errors?.['maxlength']" i18n="@@descriptionArabeMaxLength">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 text-center">
+          <button type="submit" class="btn custom-btn-success mx-2" [disabled]="proTypeForm.invalid" i18n="@@updateButton">Mettre à jour</button>
+          <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

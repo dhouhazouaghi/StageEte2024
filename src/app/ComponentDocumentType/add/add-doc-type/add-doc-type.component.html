@@ -1,0 +1,77 @@
+<!-- add-doc-type.component.html -->
+
+<div class="container-fluid mt-5">
+  <div class="card" style="width: 100%;">
+    <div class="card-header" style="background-color: #829B66; color: white;">
+      <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@addDocTypeTitle">Ajouter un type de document</h4>
+    </div>
+    <div class="card-body p-5">
+      <form [formGroup]="documentTypeForm" (ngSubmit)="addDocumentType()" class="row g-3">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+            <div class="custom-switch d-flex align-items-center">
+              <input type="checkbox" id="documentTypeEtat" (change)="onEtatChange($event)" [checked]="documentTypeForm.controls['documentTypeEtat'].value === 1">
+              <label class="form-check-label" for="documentTypeEtat"></label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="documentTypeLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+              Libellé <span class="text-danger">*</span>
+            </label>
+            <input id="documentTypeLibelle" type="text" class="form-control green-border" formControlName="documentTypeLibelle" required>
+            <div *ngIf="documentTypeForm.controls['documentTypeLibelle'].invalid && (documentTypeForm.controls['documentTypeLibelle'].dirty || documentTypeForm.controls['documentTypeLibelle'].touched)">
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeLibelle'].errors?.['required']" i18n="@@libelleRequired">Libellé est requis.</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="documentTypeLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+              Libellé Arabe <span class="text-danger">*</span>
+            </label>
+            <input id="documentTypeLibelleArabe" type="text" class="form-control green-border" formControlName="documentTypeLibelleArabe" required>
+            <div *ngIf="documentTypeForm.controls['documentTypeLibelleArabe'].invalid && (documentTypeForm.controls['documentTypeLibelleArabe'].dirty || documentTypeForm.controls['documentTypeLibelleArabe'].touched)">
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libellé Arabe est requis.</small>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="documentTypeDescription" class="form-label bold-label" i18n="@@descriptionLabel">Description</label>
+            <div class="position-relative">
+              <textarea id="documentTypeDescription" class="form-control green-border" formControlName="documentTypeDescription" rows="3" maxlength="1000" required></textarea>
+              <div class="text-end mt-2">
+                <small class="text-muted">{{documentTypeForm.controls['documentTypeDescription'].value?.length || 0}}/1000</small>
+              </div>
+            </div>
+            <div *ngIf="documentTypeForm.controls['documentTypeDescription'].invalid && (documentTypeForm.controls['documentTypeDescription'].dirty || documentTypeForm.controls['documentTypeDescription'].touched)">
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeDescription'].errors?.['required']" i18n="@@descriptionRequired">Description est requise.</small>
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeDescription'].errors?.['minlength']" i18n="@@descriptionMinLength">Description doit comporter au moins 10 caractères.</small>
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeDescription'].errors?.['maxlength']" i18n="@@descriptionMaxLength">Description ne peut pas dépasser 1000 caractères.</small>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="documentTypeDescriptionArabe" class="form-label bold-label" i18n="@@descriptionArabeLabel">Description Arabe</label>
+            <div class="position-relative">
+              <textarea id="documentTypeDescriptionArabe" class="form-control green-border" formControlName="documentTypeDescriptionArabe" rows="3" maxlength="1000" required></textarea>
+              <div class="text-end mt-2">
+                <small class="text-muted">{{documentTypeForm.controls['documentTypeDescriptionArabe'].value?.length || 0}}/1000</small>
+              </div>
+            </div>
+            <div *ngIf="documentTypeForm.controls['documentTypeDescriptionArabe'].invalid && (documentTypeForm.controls['documentTypeDescriptionArabe'].dirty || documentTypeForm.controls['documentTypeDescriptionArabe'].touched)">
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeDescriptionArabe'].errors?.['required']" i18n="@@descriptionArabeRequired">Description Arabe est requise.</small>
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeDescriptionArabe'].errors?.['minlength']" i18n="@@descriptionArabeMinLength">Description Arabe doit comporter au moins 10 caractères.</small>
+              <small class="text-danger" *ngIf="documentTypeForm.controls['documentTypeDescriptionArabe'].errors?.['maxlength']" i18n="@@descriptionArabeMaxLength">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn custom-btn-success mx-2" [disabled]="documentTypeForm.invalid" i18n="@@validateButton">Valider</button>
+          <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+    <div class="container-fluid" style="width: 100%;">
+      <div *ngIf="avocatSpecialite; else noData">
+        <div class="card border-success mt-3">
+          <div class="card-header" style="background-color: #829B66; color: white;">
+            <h5 class="card-title mb-0">Détails de l'Avocat Spécialité {{ avocatSpecialite.avocatSpecialiteLibelle }}</h5>
+          </div>
+          <div class="card-body" style="padding: 1rem;">
+            <p class="card-text"><strong>État:</strong> {{ avocatSpecialite.avocatSpecialiteEtat }}</p>
+            <p class="card-text"><strong>Libellé:</strong> {{ avocatSpecialite.avocatSpecialiteLibelle }}</p>
+            <p class="card-text"><strong>Libellé Arabe:</strong> {{ avocatSpecialite.avocatSpecialiteLibelleArabe }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ avocatSpecialite.avocatSpecialiteDescription }}</p>
+            <p class="card-text"><strong>Description Arabe:</strong> {{ avocatSpecialite.avocatSpecialiteDescriptionArabe }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <ng-template #noData>
+        <div class="alert alert-warning mt-3" role="alert">
+          Aucun détail disponible pour cette spécialité d'avocat.
+        </div>
+      </ng-template>
+      
+      <div class="mt-3">
+        <a routerLink="/AvocatSpecialiteList" class="btn btn-secondary">
+          <i class="fas fa-arrow-left mr-1"></i> Retour
+        </a>
+      </div>
+    </div>
+  </div>
+  

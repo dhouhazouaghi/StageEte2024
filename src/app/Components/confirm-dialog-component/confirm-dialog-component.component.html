@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="dialog-title">Confirmation</h2>
+<mat-dialog-content class="dialog-content">
+  <p>Êtes-vous sûr de vouloir supprimer cet enregistrement ?</p>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button class="btn btn-secondary" (click)="onNoClick()">Non</button>
+  <button mat-button class="btn btn-primary" (click)="onYesClick()" cdkFocusInitial>Oui</button>
+</mat-dialog-actions>

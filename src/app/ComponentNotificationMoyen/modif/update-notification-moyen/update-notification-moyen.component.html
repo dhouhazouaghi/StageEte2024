@@ -1,0 +1,77 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;">Modifier un moyen de notification</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="notificationMoyenForm" (ngSubmit)="updateNotificationMoyen()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="notificationMoyenEtat" (change)="onEtatChange($event)" [checked]="notificationMoyenForm.controls['notificationMoyenEtat'].value === 1">
+                <label class="form-check-label" for="notificationMoyenEtat"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="notificationMoyenLibelle" class="form-label bold-label">
+                Libelle <span class="text-danger">*</span>
+              </label>
+              <input id="notificationMoyenLibelle" type="text" class="form-control green-border" formControlName="notificationMoyenLibelle">
+              <div *ngIf="notificationMoyenForm.controls['notificationMoyenLibelle'].invalid && (notificationMoyenForm.controls['notificationMoyenLibelle'].dirty || notificationMoyenForm.controls['notificationMoyenLibelle'].touched)">
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenLibelle'].errors?.['required']">Libelle est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="notificationMoyenLibelleArabe" class="form-label bold-label">
+                Libelle Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="notificationMoyenLibelleArabe" type="text" class="form-control green-border" formControlName="notificationMoyenLibelleArabe">
+              <div *ngIf="notificationMoyenForm.controls['notificationMoyenLibelleArabe'].invalid && (notificationMoyenForm.controls['notificationMoyenLibelleArabe'].dirty || notificationMoyenForm.controls['notificationMoyenLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenLibelleArabe'].errors?.['required']">Libelle Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="notificationMoyenDescription" class="form-label bold-label">Description</label>
+              <div class="position-relative">
+                <textarea id="notificationMoyenDescription" class="form-control green-border" formControlName="notificationMoyenDescription" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{notificationMoyenForm.controls['notificationMoyenDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="notificationMoyenForm.controls['notificationMoyenDescription'].invalid && (notificationMoyenForm.controls['notificationMoyenDescription'].dirty || notificationMoyenForm.controls['notificationMoyenDescription'].touched)">
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenDescription'].errors?.['required']">Description est requise.</small>
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenDescription'].errors?.['minlength']">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenDescription'].errors?.['maxlength']">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="notificationMoyenDescriptionArabe" class="form-label bold-label">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="notificationMoyenDescriptionArabe" class="form-control green-border" formControlName="notificationMoyenDescriptionArabe" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{notificationMoyenForm.controls['notificationMoyenDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="notificationMoyenForm.controls['notificationMoyenDescriptionArabe'].invalid && (notificationMoyenForm.controls['notificationMoyenDescriptionArabe'].dirty || notificationMoyenForm.controls['notificationMoyenDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenDescriptionArabe'].errors?.['required']">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenDescriptionArabe'].errors?.['minlength']">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="notificationMoyenForm.controls['notificationMoyenDescriptionArabe'].errors?.['maxlength']">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2">Mettre à jour</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

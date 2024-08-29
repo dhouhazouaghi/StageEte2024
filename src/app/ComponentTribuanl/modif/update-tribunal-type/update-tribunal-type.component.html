@@ -1,0 +1,80 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;">Modifier un tribunal type</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="tribunalTypeForm" (ngSubmit)="updateTribunalType()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="tribunalTypeEtat" (change)="onEtatChange($event)" [checked]="tribunalTypeForm.controls['tribunalTypeEtat'].value === 1">
+                <label class="form-check-label" for="tribunalTypeEtat"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeLibelle" class="form-label bold-label">
+                Libelle <span class="text-danger">*</span>
+              </label>
+              <input id="tribunalTypeLibelle" type="text" class="form-control green-border" formControlName="tribunalTypeLibelle">
+              <div *ngIf="tribunalTypeForm.controls['tribunalTypeLibelle'].invalid && (tribunalTypeForm.controls['tribunalTypeLibelle'].dirty || tribunalTypeForm.controls['tribunalTypeLibelle'].touched)">
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeLibelle'].errors?.['required']">Libelle est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeLibelleArabe" class="form-label bold-label">
+                Libelle Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="tribunalTypeLibelleArabe" type="text" class="form-control green-border" formControlName="tribunalTypeLibelleArabe">
+              <div *ngIf="tribunalTypeForm.controls['tribunalTypeLibelleArabe'].invalid && (tribunalTypeForm.controls['tribunalTypeLibelleArabe'].dirty || tribunalTypeForm.controls['tribunalTypeLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeLibelleArabe'].errors?.['required']">Libelle Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeDescription" class="form-label bold-label">Description</label>
+              <div class="position-relative">
+                <textarea id="tribunalTypeDescription" class="form-control green-border" formControlName="tribunalTypeDescription" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{tribunalTypeForm.controls['tribunalTypeDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].invalid && (tribunalTypeForm.controls['tribunalTypeDescription'].dirty || tribunalTypeForm.controls['tribunalTypeDescription'].touched)">
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].errors?.['required']">Description est requise.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].errors?.['minlength']">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].errors?.['maxlength']">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeDescriptionArabe" class="form-label bold-label">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="tribunalTypeDescriptionArabe" class="form-control green-border" formControlName="tribunalTypeDescriptionArabe" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].invalid && (tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].dirty || tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].errors?.['required']">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].errors?.['minlength']">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].errors?.['maxlength']">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2">Mettre à jour</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()">Annuler</button>
+          </div>
+        </form>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

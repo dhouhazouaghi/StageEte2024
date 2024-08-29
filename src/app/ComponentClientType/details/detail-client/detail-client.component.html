@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+    <div class="container-fluid" style="width: 100%;">
+      <div *ngIf="clientType; else noData">
+        <div class="card border-success mt-3">
+          <div class="card-header" style="background-color: #829B66; color: white;">
+            <h5 class="card-title mb-0"> Details de Type Client  {{ clientType.clientTypeLibelle}}</h5>
+          </div>
+          <div class="card-body" style="padding: 1rem;">
+            <p class="card-text"><strong>État:</strong> {{ clientType.clientTypeEtat}}</p>
+  
+            <p class="card-text"><strong>Libellé:</strong> {{ clientType.clientTypeLibelle }}</p>
+            <p class="card-text"><strong>Libellé Arabe:</strong> {{ clientType.clientTypeLibelleArabe }}</p>
+            
+          </div>
+        </div>
+      </div>
+  
+      <ng-template #noData>
+        <div class="alert alert-warning mt-3" role="alert">
+          Aucun détail disponible pour ce client type .
+        </div>
+      </ng-template>
+      <div class="mt-3">
+        <a routerLink="/client-types" class="btn btn-secondary">
+          <i class="fas fa-arrow-left mr-1"></i> Retour
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  

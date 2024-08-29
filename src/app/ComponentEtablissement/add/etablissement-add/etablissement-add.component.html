@@ -1,0 +1,62 @@
+<div class="container-fluid mt-5">
+  <div class="card" style="width: 100%;">
+    <div class="card-header" style="background-color: #829B66; color: white;">
+      <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@addEtablissementTitle">Ajouter un établissement</h4>
+    </div>
+    <div class="card-body p-5">
+      <form [formGroup]="etablissementForm" (ngSubmit)="addEtablissement()" class="row g-3">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="etablissementLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+              Libelle <span class="text-danger">*</span>
+            </label>
+            <input id="etablissementLibelle" type="text" class="form-control green-border" formControlName="etablissementLibelle" required>
+            <div *ngIf="etablissementForm.controls['etablissementLibelle'].invalid && (etablissementForm.controls['etablissementLibelle'].dirty || etablissementForm.controls['etablissementLibelle'].touched)">
+              <small class="text-danger" *ngIf="etablissementForm.controls['etablissementLibelle'].errors?.['required']" i18n="@@libelleRequired">Libelle est requis.</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="etablissementTelephone" class="form-label bold-label" i18n="@@telephoneLabel">
+              Téléphone <span class="text-danger">*</span>
+            </label>
+            <input id="etablissementTelephone" type="text" class="form-control green-border" formControlName="etablissementTelephone" required>
+            <div *ngIf="etablissementForm.controls['etablissementTelephone'].invalid && (etablissementForm.controls['etablissementTelephone'].dirty || etablissementForm.controls['etablissementTelephone'].touched)">
+              <small class="text-danger" *ngIf="etablissementForm.controls['etablissementTelephone'].errors?.['required']" i18n="@@telephoneRequired">Téléphone est requis.</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="etablissementAdresse" class="form-label bold-label" i18n="@@telephoneLabel">
+              Adresse <span class="text-danger">*</span>
+            </label>
+            <input id="etablissementAdresse" type="text" class="form-control green-border" formControlName="etablissementAdresse" required>
+            <div *ngIf="etablissementForm.controls['etablissementAdresse'].invalid && (etablissementForm.controls['etablissementAdresse'].dirty || etablissementForm.controls['etablissementTelephone'].touched)">
+              <small class="text-danger" *ngIf="etablissementForm.controls['etablissementAdresse'].errors?.['required']"  >Adresse est requise.</small>
+            </div>
+          </div>
+
+        <!-- <div class="row">
+          <div class="col-md-12 mb-3">
+            <label for="etablissementAdresse" class="form-label bold-label" i18n="@@adresseLabel">
+              Adresse <span class="text-danger">*</span>
+            </label>
+            <input id="etablissementAdresse" type="text" class="form-control green-border" formControlName="etablissementAdresse" maxlength="1000" required>
+            <div class="text-end mt-2">
+              <small class="text-muted">{{etablissementForm.controls['etablissementAdresse'].value?.length || 0}}/1000</small>
+            </div>
+            <div *ngIf="etablissementForm.controls['etablissementAdresse'].invalid && (etablissementForm.controls['etablissementAdresse'].dirty || etablissementForm.controls['etablissementAdresse'].touched)">
+              <small class="text-danger" *ngIf="etablissementForm.controls['etablissementAdresse'].errors?.['required']" i18n="@@adresseRequired">Adresse est requise.</small>
+              <small class="text-danger" *ngIf="etablissementForm.controls['etablissementAdresse'].errors?.['minlength']" i18n="@@adresseMinLength">Adresse doit comporter au moins 10 caractères.</small>
+              <small class="text-danger" *ngIf="etablissementForm.controls['etablissementAdresse'].errors?.['maxlength']" i18n="@@adresseMaxLength">Adresse ne peut pas dépasser 1000 caractères.</small>
+            </div>
+          </div>
+        </div> -->
+        <div class="col-12 text-center">
+          <button type="submit" class="btn custom-btn-success mx-2" [disabled]="etablissementForm.invalid" i18n="@@validateButton">Valider</button>
+          <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

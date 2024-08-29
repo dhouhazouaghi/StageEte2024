@@ -1,0 +1,35 @@
+/* Ajoutez vos styles personnalisés ici, si nécessaire */
+.container {
+    margin-top: 20px;
+  }
+  
+  .alert-danger {
+    margin-top: 10px;
+  }
+  /* Add this to your component's CSS file or global stylesheet */
+.small-table td, .small-table th {
+  padding: 0.5rem; /* Reduce padding */
+}
+
+
+/* tribunal-type-update.component.scss */
+.custom-btn-success {
+  background-color: #699f34;
+  border-color: #699f34;
+  color: #fff;
+}
+
+.custom-btn-success:hover {
+  background-color: #5a8a27;
+  border-color: #5a8a27;
+}
+
+////////////////////////SEAAAAAAAAAAAAAAARCH
+.ml-auto {
+  margin-left: 73%;
+}
+.custom-input {
+  background-color: white; /* Sets the background color to white */
+  border: 1px solid #ced4da; /* Optional: adds a border */
+  border-radius: 0.25rem; /* Optional: for rounded corners */
+}

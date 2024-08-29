@@ -1,0 +1,90 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@updateDossierCategorieTitle">Mettre à jour la catégorie de dossier</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="dossierCategorieForm" (ngSubmit)="updateDossierCategorie()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="dossierCategorieEtat" (change)="onEtatChange($event)" [checked]="dossierCategorieForm.controls['dossierCategorieEtat'].value === 1">
+                <label class="form-check-label" for="dossierCategorieEtat"></label>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="dossierAxeRef" class="form-label bold-label" i18n="@@dossierAxeRefLabel">
+                Référence Axe <span class="text-danger">*</span>
+              </label>
+              <input id="dossierAxeRef" type="number" class="form-control green-border" formControlName="dossierAxeRef" required>
+              <div *ngIf="dossierCategorieForm.controls['dossierAxeRef'].invalid && (dossierCategorieForm.controls['dossierAxeRef'].dirty || dossierCategorieForm.controls['dossierAxeRef'].touched)">
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierAxeRef'].errors?.['required']" i18n="@@dossierAxeRefRequired">Référence Axe est requise.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="dossierCategorieLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+                Libelle <span class="text-danger">*</span>
+              </label>
+              <input id="dossierCategorieLibelle" type="text" class="form-control green-border" formControlName="dossierCategorieLibelle" required>
+              <div *ngIf="dossierCategorieForm.controls['dossierCategorieLibelle'].invalid && (dossierCategorieForm.controls['dossierCategorieLibelle'].dirty || dossierCategorieForm.controls['dossierCategorieLibelle'].touched)">
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieLibelle'].errors?.['required']" i18n="@@libelleRequired">Libelle est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="dossierCategorieLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+                Libelle Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="dossierCategorieLibelleArabe" type="text" class="form-control green-border" formControlName="dossierCategorieLibelleArabe" required>
+              <div *ngIf="dossierCategorieForm.controls['dossierCategorieLibelleArabe'].invalid && (dossierCategorieForm.controls['dossierCategorieLibelleArabe'].dirty || dossierCategorieForm.controls['dossierCategorieLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libelle Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="dossierCategorieDescription" class="form-label bold-label" i18n="@@descriptionLabel">Description</label>
+              <div class="position-relative">
+                <textarea id="dossierCategorieDescription" class="form-control green-border" formControlName="dossierCategorieDescription" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{dossierCategorieForm.controls['dossierCategorieDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="dossierCategorieForm.controls['dossierCategorieDescription'].invalid && (dossierCategorieForm.controls['dossierCategorieDescription'].dirty || dossierCategorieForm.controls['dossierCategorieDescription'].touched)">
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieDescription'].errors?.['required']" i18n="@@descriptionRequired">Description est requise.</small>
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieDescription'].errors?.['minlength']" i18n="@@descriptionMinLength">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieDescription'].errors?.['maxlength']" i18n="@@descriptionMaxLength">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="dossierCategorieDescriptionArabe" class="form-label bold-label" i18n="@@descriptionArabeLabel">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="dossierCategorieDescriptionArabe" class="form-control green-border" formControlName="dossierCategorieDescriptionArabe" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{dossierCategorieForm.controls['dossierCategorieDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="dossierCategorieForm.controls['dossierCategorieDescriptionArabe'].invalid && (dossierCategorieForm.controls['dossierCategorieDescriptionArabe'].dirty || dossierCategorieForm.controls['dossierCategorieDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieDescriptionArabe'].errors?.['required']" i18n="@@descriptionArabeRequired">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieDescriptionArabe'].errors?.['minlength']" i18n="@@descriptionArabeMinLength">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="dossierCategorieForm.controls['dossierCategorieDescriptionArabe'].errors?.['maxlength']" i18n="@@descriptionArabeMaxLength">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2" [disabled]="dossierCategorieForm.invalid" i18n="@@validateButton">Valider</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

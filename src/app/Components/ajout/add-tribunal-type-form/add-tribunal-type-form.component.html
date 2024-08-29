@@ -1,0 +1,77 @@
+<div class="container mt-5">
+    <div class="card mx-auto" style="max-width: 800px;">
+      <div class="card-header" style="background-color: #81A263; color: white;">
+        <h3 class="card-title text-white">Ajouter un tribunal type</h3>
+      </div>
+  
+  
+  
+      
+      <div class="card-body">
+        <form [formGroup]="tribunalTypeForm" (ngSubmit)="submitForm()" class="row g-3">
+  
+          <div class="row">
+        
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input class="form-check-input" type="checkbox" id="tribunalTypeEtat" formControlName="tribunalTypeEtat">
+                <label class="form-check-label" for="tribunalTypeEtat"></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeLibelle" class="form-label bold-label">Libelle</label>
+              <input id="tribunalTypeLibelle" type="text" class="form-control green-border" formControlName="tribunalTypeLibelle" required>          </div>
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeLibelleArabe" class="form-label bold-label">Libelle Arabe</label>
+              <input id="tribunalTypeLibelleArabe" type="text" class="form-control green-border" formControlName="tribunalTypeLibelleArabe" required>
+            </div>
+          </div>
+  
+  
+  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeDescription" class="form-label bold-label">Description</label>
+              <textarea id="tribunalTypeDescription" class="form-control green-border" formControlName="tribunalTypeDescription" rows="3" required></textarea>
+              <div *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].invalid && (tribunalTypeForm.controls['tribunalTypeDescription'].dirty || tribunalTypeForm.controls['tribunalTypeDescription'].touched)">
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].errors?.['required']">Description is required.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].errors?.['minlength']">Description must be at least 10 characters long.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescription'].errors?.['maxlength']">Description cannot be more than 1000 characters long.</small>
+              </div>          
+            </div>
+  
+  
+  
+            <div class="col-md-6 mb-3">
+              <label for="tribunalTypeDescriptionArabe" class="form-label bold-label">Description Arabe</label>
+  <textarea id="tribunalTypeDescriptionArabe" class="form-control green-border" formControlName="tribunalTypeDescriptionArabe" rows="3" required></textarea>
+              <div *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].invalid && (tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].dirty || tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].errors?.['required']">Description arabe is required.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].errors?.['minlength']">Description arabe must be at least 10 characters long.</small>
+                <small class="text-danger" *ngIf="tribunalTypeForm.controls['tribunalTypeDescriptionArabe'].errors?.['maxlength']">Description arabe cannot be more than 1000 characters long.</small>
+              </div>          
+            </div>
+          </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success mx-2" [disabled]="tribunalTypeForm.invalid">Valider</button>
+            <button type="button" class="btn btn-secondary mx-2">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

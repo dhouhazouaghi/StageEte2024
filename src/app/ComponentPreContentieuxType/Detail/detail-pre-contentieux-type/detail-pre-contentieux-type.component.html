@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+    <div class="container-fluid" style="width: 100%;">
+      <div *ngIf="preContentieuxType; else noData">
+        <div class="card border-success mt-3">
+          <div class="card-header" style="background-color: #829B66; color: white;">
+            <h5 class="card-title mb-0">Details du Pre-Contentieux Type {{ preContentieuxType.preContentieuxTypeLibelle }}</h5>
+          </div>
+          <div class="card-body" style="padding: 1rem;">
+            <p class="card-text"><strong>État:</strong> {{ preContentieuxType.preContentieuxTypeEtat }}</p>
+            <p class="card-text"><strong>Libellé:</strong> {{ preContentieuxType.preContentieuxTypeLibelle }}</p>
+            <p class="card-text"><strong>Libellé Arabe:</strong> {{ preContentieuxType.preContentieuxTypeLibelleArabe }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ preContentieuxType.preContentieuxTypeDescription }}</p>
+            <p class="card-text"><strong>Description Arabe:</strong> {{ preContentieuxType.preContentieuxTypeDescriptionArabe }}</p>
+            <p class="card-text"><strong>Délai:</strong> {{ preContentieuxType.preContentieuxTypeDelai }} jours</p>
+          </div>
+        </div>
+      </div>
+  
+      <ng-template #noData>
+        <div class="alert alert-warning mt-3" role="alert">
+          Aucun détail disponible pour ce Pre-Contentieux Type.
+        </div>
+      </ng-template>
+      <div class="mt-3">
+        <a routerLink="/PreContentieuxTypeList" class="btn btn-secondary">
+          <i class="fas fa-arrow-left mr-1"></i> Retour
+        </a>
+      </div>
+    </div>
+  </div>
+  

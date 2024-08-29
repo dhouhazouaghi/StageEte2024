@@ -1,0 +1,79 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@addContentieuxSujetTitle">Ajouter un sujet de contentieux</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="contentieuxSujetForm" (ngSubmit)="addContentieuxSujet()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="contentieuxSujetEtat" (change)="onEtatChange($event)" [checked]="contentieuxSujetForm.controls['contentieuxSujetEtat'].value === 1">
+                <label class="form-check-label" for="contentieuxSujetEtat"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxSujetLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+                Libelle <span class="text-danger">*</span>
+              </label>
+              <input id="contentieuxSujetLibelle" type="text" class="form-control green-border" formControlName="contentieuxSujetLibelle" required>
+              <div *ngIf="contentieuxSujetForm.controls['contentieuxSujetLibelle'].invalid && (contentieuxSujetForm.controls['contentieuxSujetLibelle'].dirty || contentieuxSujetForm.controls['contentieuxSujetLibelle'].touched)">
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxSujetLibelle'].errors?.['required']" i18n="@@libelleRequired">Libelle est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxSujetLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+                Libelle Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="contentieuxSujetLibelleArabe" type="text" class="form-control green-border" formControlName="contentieuxSujetLibelleArabe" required>
+              <div *ngIf="contentieuxSujetForm.controls['contentieuxSujetLibelleArabe'].invalid && (contentieuxSujetForm.controls['contentieuxSujetLibelleArabe'].dirty || contentieuxSujetForm.controls['contentieuxSujetLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxSujetLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libelle Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxDescription" class="form-label bold-label" i18n="@@descriptionLabel">Description</label>
+              <div class="position-relative">
+                <textarea id="contentieuxDescription" class="form-control green-border" formControlName="contentieuxDescription" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{contentieuxSujetForm.controls['contentieuxDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="contentieuxSujetForm.controls['contentieuxDescription'].invalid && (contentieuxSujetForm.controls['contentieuxDescription'].dirty || contentieuxSujetForm.controls['contentieuxDescription'].touched)">
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxDescription'].errors?.['required']" i18n="@@descriptionRequired">Description est requise.</small>
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxDescription'].errors?.['minlength']" i18n="@@descriptionMinLength">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxDescription'].errors?.['maxlength']" i18n="@@descriptionMaxLength">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxDescriptionArabe" class="form-label bold-label" i18n="@@descriptionArabeLabel">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="contentieuxDescriptionArabe" class="form-control green-border" formControlName="contentieuxDescriptionArabe" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{contentieuxSujetForm.controls['contentieuxDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="contentieuxSujetForm.controls['contentieuxDescriptionArabe'].invalid && (contentieuxSujetForm.controls['contentieuxDescriptionArabe'].dirty || contentieuxSujetForm.controls['contentieuxDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxDescriptionArabe'].errors?.['required']" i18n="@@descriptionArabeRequired">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxDescriptionArabe'].errors?.['minlength']" i18n="@@descriptionArabeMinLength">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="contentieuxSujetForm.controls['contentieuxDescriptionArabe'].errors?.['maxlength']" i18n="@@descriptionArabeMaxLength">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2" [disabled]="contentieuxSujetForm.invalid" i18n="@@validateButton">Valider</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+          </div>
+          <div class="text-danger mt-3" *ngIf="errorMessage">
+            <p>{{ errorMessage }}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+  <div class="container-fluid" style="width: 100%;">
+    <div *ngIf="notificationMoyen; else noData">
+      <div class="card border-success mt-3">
+        <div class="card-header" style="background-color: #829B66; color: white;">
+          <h5 class="card-title mb-0"> Details de notification  {{ notificationMoyen.notificationMoyenLibelle }}</h5>
+        </div>
+        <div class="card-body" style="padding: 1rem;">
+          <p class="card-text"><strong>État:</strong> {{ notificationMoyen.notificationMoyenEtat }}</p>
+
+          <p class="card-text"><strong>Libellé:</strong> {{notificationMoyen.notificationMoyenLibelle }}</p>
+          <p class="card-text"><strong>Libellé Arabe:</strong> {{ notificationMoyen.notificationMoyenLibelleArabe  }}</p>
+          <p class="card-text"><strong>Description:</strong> {{ notificationMoyen.notificationMoyenDescription }}</p>
+          <p class="card-text"><strong>Description Arabe:</strong> {{notificationMoyen.notificationMoyenDescriptionArabe }}</p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noData>
+      <div class="alert alert-warning mt-3" role="alert">
+        Aucun détail disponible pour ce notification moyen 
+      </div>
+    </ng-template>
+    <div class="mt-3">
+      <a routerLink="/notif" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-1"></i> Retour
+      </a>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container-fluid mt-5">
+  <div class="card" style="width: 100%;">
+    <div class="card-header" style="background-color: #829B66; color: white;">
+      <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@addGouvernoratTitle">Ajouter un gouvernorat</h4>
+    </div>
+    <div class="card-body p-5">
+      <form [formGroup]="gouvernoratForm" (ngSubmit)="addGouvernorat()" class="row g-3">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+            <div class="custom-switch d-flex align-items-center">
+              <input 
+                type="checkbox" 
+                id="gouvernoratEtat" 
+                (change)="onEtatChange($event)" 
+                [checked]="gouvernoratForm.get('gouvernoratEtat')?.value === 1"
+              >
+              <label class="form-check-label" for="gouvernoratEtat"></label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="gouvernoratLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+              Libelle <span class="text-danger">*</span>
+            </label>
+            <input 
+              id="gouvernoratLibelle" 
+              type="text" 
+              class="form-control green-border" 
+              formControlName="gouvernoratLibelle" 
+              required
+            >
+            <div *ngIf="gouvernoratForm.get('gouvernoratLibelle')?.invalid && (gouvernoratForm.get('gouvernoratLibelle')?.dirty || gouvernoratForm.get('gouvernoratLibelle')?.touched)">
+              <small class="text-danger" *ngIf="gouvernoratForm.get('gouvernoratLibelle')?.errors?.['required']" i18n="@@libelleRequired">Libelle est requis.</small>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="gouvernoratLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+              Libelle Arabe <span class="text-danger">*</span>
+            </label>
+            <input 
+              id="gouvernoratLibelleArabe" 
+              type="text" 
+              class="form-control green-border" 
+              formControlName="gouvernoratLibelleArabe" 
+              required
+            >
+            <div *ngIf="gouvernoratForm.get('gouvernoratLibelleArabe')?.invalid && (gouvernoratForm.get('gouvernoratLibelleArabe')?.dirty || gouvernoratForm.get('gouvernoratLibelleArabe')?.touched)">
+              <small class="text-danger" *ngIf="gouvernoratForm.get('gouvernoratLibelleArabe')?.errors?.['required']" i18n="@@libelleArabeRequired">Libelle Arabe est requis.</small>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-12 text-center">
+          <button type="submit" class="btn custom-btn-success mx-2" [disabled]="gouvernoratForm.invalid" i18n="@@validateButton">Valider</button>
+          <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

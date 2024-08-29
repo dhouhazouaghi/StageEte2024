@@ -1,0 +1,32 @@
+<div class="container-fluid p-0">
+    <div class="container-fluid" style="width: 100%;">
+      <div *ngIf="dossierPieceJointe; else noData">
+        <div class="card border-success mt-3">
+          <div class="card-header" style="background-color: #829B66; color: white;">
+            <h5 class="card-title mb-0">Détails de la pièce jointe {{ dossierPieceJointe.dossierPieceJointeLibelle }}</h5>
+          </div>
+          <div class="card-body" style="padding: 1rem;">
+            <p class="card-text"><strong>État:</strong> {{ dossierPieceJointe.dossierPieceJointeEtat ? 'Actif' : 'Inactif' }}</p>
+            <p class="card-text"><strong>Originale:</strong> {{ dossierPieceJointe.dossierPieceJointeOriginale ? 'Oui' : 'Non' }}</p>
+            <p class="card-text"><strong>Ordre:</strong> {{ dossierPieceJointe.dossierPieceJointeOrdre }}</p>
+            <p class="card-text"><strong>Obligatoire:</strong> {{ dossierPieceJointe.dossierPieceJointeObligatoire ? 'Oui' : 'Non' }}</p>
+            <p class="card-text"><strong>Libellé:</strong> {{ dossierPieceJointe.dossierPieceJointeLibelle }}</p>
+            <p class="card-text"><strong>Libellé Arabe:</strong> {{ dossierPieceJointe.dossierPieceJointeLibelleArabe }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ dossierPieceJointe.dossierPieceJointeDescription }}</p>
+            <p class="card-text"><strong>Description Arabe:</strong> {{ dossierPieceJointe.dossierPieceJointeDescriptionArabe }}</p>
+          </div>
+        </div>
+      </div>
+      <ng-template #noData>
+        <div class="alert alert-warning mt-3" role="alert">
+          Aucun détail disponible pour cette pièce jointe.
+        </div>
+      </ng-template>
+      <div class="mt-3">
+        <a routerLink="/PieceJointeList" class="btn btn-secondary">
+          <i class="fas fa-arrow-left mr-1"></i> Retour
+        </a>
+      </div>
+    </div>
+  </div>
+  

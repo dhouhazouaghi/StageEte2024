@@ -1,0 +1,30 @@
+<div class="container-fluid p-0">
+  <div class="container-fluid" style="width: 100%;">
+    <div *ngIf="etat; else noData">
+      <div class="card border-success mt-3">
+        <div class="card-header" style="background-color: #829B66; color: white;">
+          <h5 class="card-title mb-0">Détails de l'État {{ etat.etatLibelle }}</h5>
+        </div>
+        <div class="card-body" style="padding: 1rem;">
+          <p class="card-text"><strong>État:</strong> {{ etat.etatEtat }}</p>
+          <p class="card-text"><strong>Libellé:</strong> {{ etat.etatLibelle }}</p>
+          <p class="card-text"><strong>Libellé Arabe:</strong> {{ etat.etatLibelleArabe }}</p>
+          <p class="card-text"><strong>Description:</strong> {{ etat.etatDescription }}</p>
+          <p class="card-text"><strong>Description Arabe:</strong> {{ etat.etatDescriptionArabe }}</p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noData>
+      <div class="alert alert-warning mt-3" role="alert">
+        Aucun détail disponible pour cet État.
+      </div>
+    </ng-template>
+
+    <div class="mt-3">
+      <a routerLink="/state" class="btn btn-secondary">
+        <i class="fas fa-arrow-left mr-1"></i> Retour
+      </a>
+    </div>
+  </div>
+</div>

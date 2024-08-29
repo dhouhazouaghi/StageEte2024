@@ -1,0 +1,87 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;">Modifier un bureau</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="bureauForm" (ngSubmit)="updateBureau()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauRaisonSocial" class="form-label bold-label">
+                Raison Sociale <span class="text-danger">*</span>
+              </label>
+              <input id="bureauRaisonSocial" type="text" class="form-control green-border" formControlName="bureauRaisonSocial">
+              <div *ngIf="bureauForm.controls['bureauRaisonSocial'].invalid && (bureauForm.controls['bureauRaisonSocial'].dirty || bureauForm.controls['bureauRaisonSocial'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauRaisonSocial'].errors?.['required']">Raison Sociale est requise.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="bureauRaisonSocialArabe" class="form-label bold-label">
+                Raison Sociale Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="bureauRaisonSocialArabe" type="text" class="form-control green-border" formControlName="bureauRaisonSocialArabe">
+              <div *ngIf="bureauForm.controls['bureauRaisonSocialArabe'].invalid && (bureauForm.controls['bureauRaisonSocialArabe'].dirty || bureauForm.controls['bureauRaisonSocialArabe'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauRaisonSocialArabe'].errors?.['required']">Raison Sociale Arabe est requise.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauPersonneContact" class="form-label bold-label">Personne Contact</label>
+              <input id="bureauPersonneContact" type="text" class="form-control green-border" formControlName="bureauPersonneContact">
+              <div *ngIf="bureauForm.controls['bureauPersonneContact'].invalid && (bureauForm.controls['bureauPersonneContact'].dirty || bureauForm.controls['bureauPersonneContact'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauPersonneContact'].errors?.['required']">Personne Contact est requise.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="bureauPersonneContactArabe" class="form-label bold-label">Personne Contact Arabe</label>
+              <input id="bureauPersonneContactArabe" type="text" class="form-control green-border" formControlName="bureauPersonneContactArabe">
+              <div *ngIf="bureauForm.controls['bureauPersonneContactArabe'].invalid && (bureauForm.controls['bureauPersonneContactArabe'].dirty || bureauForm.controls['bureauPersonneContactArabe'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauPersonneContactArabe'].errors?.['required']">Personne Contact Arabe est requise.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauTelephone" class="form-label bold-label">Téléphone</label>
+              <input id="bureauTelephone" type="text" class="form-control green-border" formControlName="bureauTelephone">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauGsm" class="form-label bold-label">GSM</label>
+              <input id="bureauGsm" type="text" class="form-control green-border" formControlName="bureauGsm">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauFax" class="form-label bold-label">Fax</label>
+              <input id="bureauFax" type="text" class="form-control green-border" formControlName="bureauFax">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauAdresse" class="form-label bold-label">Adresse</label>
+              <input id="bureauAdresse" type="text" class="form-control green-border" formControlName="bureauAdresse">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauAdresseArabe" class="form-label bold-label">Adresse Arabe</label>
+              <input id="bureauAdresseArabe" type="text" class="form-control green-border" formControlName="bureauAdresseArabe">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauCodePostal" class="form-label bold-label">Code Postal</label>
+              <input id="bureauCodePostal" type="text" class="form-control green-border" formControlName="bureauCodePostal">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauEmail" class="form-label bold-label">Email</label>
+              <input id="bureauEmail" type="email" class="form-control green-border" formControlName="bureauEmail">
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2">Mettre à jour</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()">Annuler</button>
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+            {{ errorMessage }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,67 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;">Modifier une compétence expert</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="expertCompetenceForm" (ngSubmit)="updateExpertCompetence()" class="row g-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="expertCompetenceLibelle" class="form-label bold-label">
+                Libelle <span class="text-danger">*</span>
+              </label>
+              <input id="expertCompetenceLibelle" type="text" class="form-control green-border" formControlName="expertCompetenceLibelle">
+              <div *ngIf="expertCompetenceForm.controls['expertCompetenceLibelle'].invalid && (expertCompetenceForm.controls['expertCompetenceLibelle'].dirty || expertCompetenceForm.controls['expertCompetenceLibelle'].touched)">
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceLibelle'].errors?.['required']">Libelle est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="expertCompetenceLibelleArabe" class="form-label bold-label">
+                Libelle Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="expertCompetenceLibelleArabe" type="text" class="form-control green-border" formControlName="expertCompetenceLibelleArabe">
+              <div *ngIf="expertCompetenceForm.controls['expertCompetenceLibelleArabe'].invalid && (expertCompetenceForm.controls['expertCompetenceLibelleArabe'].dirty || expertCompetenceForm.controls['expertCompetenceLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceLibelleArabe'].errors?.['required']">Libelle Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="expertCompetenceDescription" class="form-label bold-label">Description</label>
+              <div class="position-relative">
+                <textarea id="expertCompetenceDescription" class="form-control green-border" formControlName="expertCompetenceDescription" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{expertCompetenceForm.controls['expertCompetenceDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="expertCompetenceForm.controls['expertCompetenceDescription'].invalid && (expertCompetenceForm.controls['expertCompetenceDescription'].dirty || expertCompetenceForm.controls['expertCompetenceDescription'].touched)">
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceDescription'].errors?.['required']">Description est requise.</small>
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceDescription'].errors?.['minlength']">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceDescription'].errors?.['maxlength']">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="expertCompetenceDescriptionArabe" class="form-label bold-label">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="expertCompetenceDescriptionArabe" class="form-control green-border" formControlName="expertCompetenceDescriptionArabe" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{expertCompetenceForm.controls['expertCompetenceDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="expertCompetenceForm.controls['expertCompetenceDescriptionArabe'].invalid && (expertCompetenceForm.controls['expertCompetenceDescriptionArabe'].dirty || expertCompetenceForm.controls['expertCompetenceDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceDescriptionArabe'].errors?.['required']">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceDescriptionArabe'].errors?.['minlength']">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="expertCompetenceForm.controls['expertCompetenceDescriptionArabe'].errors?.['maxlength']">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2">Mettre à jour</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

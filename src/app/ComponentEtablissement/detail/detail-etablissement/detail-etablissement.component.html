@@ -1,0 +1,29 @@
+<div class="container-fluid p-0">
+    <div class="container-fluid" style="width: 100%;">
+      <div *ngIf="etablissement; else noData">
+        <div class="card border-success mt-3">
+          <div class="card-header" style="background-color: #829B66; color: white;">
+            <h5 class="card-title mb-0">Détails de l'établissement {{ etablissement.etablissementLibelle }}</h5>
+          </div>
+          <div class="card-body" style="padding: 1rem;">
+            <p class="card-text"><strong>Libellé:</strong> {{ etablissement.etablissementLibelle }}</p>
+            <p class="card-text"><strong>Téléphone:</strong> {{ etablissement.etablissementTelephone }}</p>
+            <p class="card-text"><strong>Adresse:</strong> {{ etablissement.etablissementAdresse }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <ng-template #noData>
+        <div class="alert alert-warning mt-3" role="alert">
+          Aucun détail disponible pour cet établissement.
+        </div>
+      </ng-template>
+      <div class="mt-3">
+        <a routerLink="/EtablissementList" class="btn btn-secondary">
+          <i class="fas fa-arrow-left mr-1"></i> Retour
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  

@@ -1,0 +1,36 @@
+.dialog-title {
+    background-color: #2b8d6d; /* Bootstrap primary color */
+    color: white;
+    font-size: 1.5rem; /* Larger font size for better visibility */
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .dialog-content {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f9fa; /* Light background for content */
+  }
+  
+  .dialog-actions {
+    padding: 1rem;
+    justify-content: center;
+    background-color: #f1f1f1; /* Light grey background for actions */
+    display: flex;
+    gap: 1rem; /* Add space between buttons */
+  }
+  
+  .btn-secondary, .btn-primary {
+    margin: 0; /* Ensure there's no extra margin applied */
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #2b8d6d; /* Bootstrap primary color */
+    color: white;
+  }
+  

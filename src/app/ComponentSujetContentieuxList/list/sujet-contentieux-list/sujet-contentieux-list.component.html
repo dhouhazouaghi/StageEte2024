@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/5.2.0/css/mdb.min.css">
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<!-- Container for buttons and search input -->
+<div class="d-flex justify-content-between mb-3">
+  <!-- Add Button -->
+  <button type="button" class="btn custom-btn-success" [routerLink]="['/SujetContentieuxAdd']">
+    <i class="fas fa-plus"></i>
+  </button>
+  
+
+  <!-- Spacer to push search input to the right -->
+  <div class="ml-auto"></div>
+
+   <!-- Search Input with Button -->
+   <div class="input-group">
+ <div class="form-outline">
+    <input
+    type="search"
+    id="searchInput"
+    class="form-control custom-input"
+    placeholder="Recherche..."
+    [(ngModel)]="searchQuery"
+    (ngModelChange)="searchTribunalTypes()"
+  />
+    </div> 
+    <button type="button" class="btn btn-warning">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header" style="background-color: #829B66; color: white; padding: 0.5rem;">
+    <h4 class="card-title mb-0" style="font-size: 1.1rem;">Liste de sujet  contentieux</h4>
+  </div>
+  <div class="card-body" style="padding: 0;">
+    <table class="table table-striped small-table" style="width: 100%; border: 1px solid #E2F1CD;">
+      <thead>
+        <tr>
+          <th>Libellé</th>
+          <th>Description</th>
+          <th>Etat</th>
+          <th class="text-center">Opérations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tribunal of tribunalTypes | paginate: { itemsPerPage: pageSize, currentPage: page }">
+          <td>{{ tribunal.contentieuxSujetLibelle }}</td>
+          <td>{{ limitDescription(tribunal.contentieuxDescription) }}</td>
+          <td>{{ tribunal.contentieuxSujetEtat }}</td>
+          <td class="text-center">
+            <a [routerLink]="['/SujetContentieuxDetail', tribunal.id]" class="btn btn-info btn-sm mx-1 text-white" style="width: 35px; height: 35px; padding: 0;">
+              <i class="fas fa-eye" style="line-height: 35px;"></i>
+            </a>
+            <a [routerLink]="['/SujetContentieuxUpp', tribunal.id]" class="btn btn-warning btn-sm mx-1 text-white" style="width: 35px; height: 35px; padding: 0;">
+              <i class="fas fa-edit" style="line-height: 35px;"></i>
+            </a>
+            <button type="button" class="btn btn-danger btn-sm mx-1 text-white" (click)="deleteTribunalType(tribunal.id)" style="width: 35px; height: 35px; padding: 0;">
+              <i class="fas fa-trash-alt" style="line-height: 35px;"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="d-flex flex-column align-items-center mt-3">
+  <div class="mb-2">
+    Affiche {{ (page - 1) * pageSize + 1 }} - {{ page * pageSize < tribunalTypes.length ? page * pageSize : tribunalTypes.length }} de {{ tribunalTypes.length }} éléments
+  </div>
+  <pagination-controls (pageChange)="page = $event" previousLabel="«" nextLabel="»"></pagination-controls>
+</div>

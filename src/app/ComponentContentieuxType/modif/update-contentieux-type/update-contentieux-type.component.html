@@ -1,0 +1,77 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@updateContentieuxTypeTitle">Mettre à jour un type de contentieux</h4> <!-- Update title -->
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="contentieuxTypeForm" (ngSubmit)="updateContentieuxType()" class="row g-3"> <!-- Update formGroup and method -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label bold-label" i18n="@@etatLabel">État</label>
+              <div class="custom-switch d-flex align-items-center">
+                <input type="checkbox" id="contentieuxTypeEtat" (change)="onEtatChange($event)" [checked]="contentieuxTypeForm.controls['contentieuxTypeEtat'].value === 1"> <!-- Update checkbox ID and binding -->
+                <label class="form-check-label" for="contentieuxTypeEtat"></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxTypeLibelle" class="form-label bold-label" i18n="@@libelleLabel">
+                Libelle <span class="text-danger">*</span>
+              </label>
+              <input id="contentieuxTypeLibelle" type="text" class="form-control green-border" formControlName="contentieuxTypeLibelle" required>
+              <div *ngIf="contentieuxTypeForm.controls['contentieuxTypeLibelle'].invalid && (contentieuxTypeForm.controls['contentieuxTypeLibelle'].dirty || contentieuxTypeForm.controls['contentieuxTypeLibelle'].touched)">
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeLibelle'].errors?.['required']" i18n="@@libelleRequired">Libelle est requis.</small>
+              </div>
+            </div>
+    
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxTypeLibelleArabe" class="form-label bold-label" i18n="@@libelleArabeLabel">
+                Libelle Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="contentieuxTypeLibelleArabe" type="text" class="form-control green-border" formControlName="contentieuxTypeLibelleArabe" required>
+              <div *ngIf="contentieuxTypeForm.controls['contentieuxTypeLibelleArabe'].invalid && (contentieuxTypeForm.controls['contentieuxTypeLibelleArabe'].dirty || contentieuxTypeForm.controls['contentieuxTypeLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeLibelleArabe'].errors?.['required']" i18n="@@libelleArabeRequired">Libelle Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxTypeDescription" class="form-label bold-label" i18n="@@descriptionLabel">Description</label>
+              <div class="position-relative">
+                <textarea id="contentieuxTypeDescription" class="form-control green-border" formControlName="contentieuxTypeDescription" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{contentieuxTypeForm.controls['contentieuxTypeDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescription'].invalid && (contentieuxTypeForm.controls['contentieuxTypeDescription'].dirty || contentieuxTypeForm.controls['contentieuxTypeDescription'].touched)">
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescription'].errors?.['required']" i18n="@@descriptionRequired">Description est requise.</small>
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescription'].errors?.['minlength']" i18n="@@descriptionMinLength">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescription'].errors?.['maxlength']" i18n="@@descriptionMaxLength">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+    
+            <div class="col-md-6 mb-3">
+              <label for="contentieuxTypeDescriptionArabe" class="form-label bold-label" i18n="@@descriptionArabeLabel">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="contentieuxTypeDescriptionArabe" class="form-control green-border" formControlName="contentieuxTypeDescriptionArabe" rows="3" maxlength="1000" required></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{contentieuxTypeForm.controls['contentieuxTypeDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescriptionArabe'].invalid && (contentieuxTypeForm.controls['contentieuxTypeDescriptionArabe'].dirty || contentieuxTypeForm.controls['contentieuxTypeDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescriptionArabe'].errors?.['required']" i18n="@@descriptionArabeRequired">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescriptionArabe'].errors?.['minlength']" i18n="@@descriptionArabeMinLength">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="contentieuxTypeForm.controls['contentieuxTypeDescriptionArabe'].errors?.['maxlength']" i18n="@@descriptionArabeMaxLength">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2" [disabled]="contentieuxTypeForm.invalid" i18n="@@validateButton">Valider</button> <!-- Update button labels -->
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,113 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;">Modifier une pièce jointe du dossier</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="dossierPieceJointeForm" (ngSubmit)="updateDossierPieceJointe()" class="row g-3">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="dossierPieceJointeEtat" class="form-label bold-label">État</label>
+                    <div class="custom-switch d-flex align-items-center">
+                      <input type="checkbox" id="dossierPieceJointeEtat" (change)="onEtatChange($event)" [checked]="dossierPieceJointeForm.controls['dossierPieceJointeEtat'].value === 1">
+                      <label class="form-check-label" for="dossierPieceJointeEtat"></label>
+                    </div>
+                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="dossierPieceJointeOriginale" class="form-label bold-label">Originale</label>
+                  <div class="custom-switch d-flex align-items-center">
+                    <input type="checkbox" id="dossierPieceJointeOriginale" (change)="onOriginaleChange($event)" [checked]="dossierPieceJointeForm.controls['dossierPieceJointeOriginale'].value">
+                    <label class="form-check-label" for="dossierPieceJointeOriginale"></label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="dossierPieceJointeOrdre" class="form-label bold-label">Ordre</label>
+                  <input id="dossierPieceJointeOrdre" type="number" class="form-control green-border" formControlName="dossierPieceJointeOrdre">
+                  <div *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeOrdre'].invalid && (dossierPieceJointeForm.controls['dossierPieceJointeOrdre'].dirty || dossierPieceJointeForm.controls['dossierPieceJointeOrdre'].touched)">
+                    <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeOrdre'].errors?.['required']">Ordre est requis.</small>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 mb-3">
+                  <label for="dossierPieceJointeObligatoire" class="form-label bold-label">Obligatoire</label>
+                  <div class="custom-switch d-flex align-items-center">
+                    <input type="checkbox" id="dossierPieceJointeObligatoire" (change)="onObligatoireChange($event)" [checked]="dossierPieceJointeForm.controls['dossierPieceJointeObligatoire'].value">
+                    <label class="form-check-label" for="dossierPieceJointeObligatoire"></label>
+                  </div>
+                </div>
+              </div>
+              
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="dossierPieceJointeLibelle" class="form-label bold-label">
+                Libellé <span class="text-danger">*</span>
+              </label>
+              <input id="dossierPieceJointeLibelle" type="text" class="form-control green-border" formControlName="dossierPieceJointeLibelle">
+              <div *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeLibelle'].invalid && (dossierPieceJointeForm.controls['dossierPieceJointeLibelle'].dirty || dossierPieceJointeForm.controls['dossierPieceJointeLibelle'].touched)">
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeLibelle'].errors?.['required']">Libellé est requis.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="dossierPieceJointeLibelleArabe" class="form-label bold-label">
+                Libellé Arabe <span class="text-danger">*</span>
+              </label>
+              <input id="dossierPieceJointeLibelleArabe" type="text" class="form-control green-border" formControlName="dossierPieceJointeLibelleArabe">
+              <div *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeLibelleArabe'].invalid && (dossierPieceJointeForm.controls['dossierPieceJointeLibelleArabe'].dirty || dossierPieceJointeForm.controls['dossierPieceJointeLibelleArabe'].touched)">
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeLibelleArabe'].errors?.['required']">Libellé Arabe est requis.</small>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="dossierPieceJointeDescription" class="form-label bold-label">Description</label>
+              <div class="position-relative">
+                <textarea id="dossierPieceJointeDescription" class="form-control green-border" formControlName="dossierPieceJointeDescription" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{dossierPieceJointeForm.controls['dossierPieceJointeDescription'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescription'].invalid && (dossierPieceJointeForm.controls['dossierPieceJointeDescription'].dirty || dossierPieceJointeForm.controls['dossierPieceJointeDescription'].touched)">
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescription'].errors?.['required']">Description est requise.</small>
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescription'].errors?.['minlength']">Description doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescription'].errors?.['maxlength']">Description ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+  
+            <div class="col-md-6 mb-3">
+              <label for="dossierPieceJointeDescriptionArabe" class="form-label bold-label">Description Arabe</label>
+              <div class="position-relative">
+                <textarea id="dossierPieceJointeDescriptionArabe" class="form-control green-border" formControlName="dossierPieceJointeDescriptionArabe" rows="3" maxlength="1000"></textarea>
+                <div class="text-end mt-2">
+                  <small class="text-muted">{{dossierPieceJointeForm.controls['dossierPieceJointeDescriptionArabe'].value?.length || 0}}/1000</small>
+                </div>
+              </div>
+              <div *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescriptionArabe'].invalid && (dossierPieceJointeForm.controls['dossierPieceJointeDescriptionArabe'].dirty || dossierPieceJointeForm.controls['dossierPieceJointeDescriptionArabe'].touched)">
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescriptionArabe'].errors?.['required']">Description Arabe est requise.</small>
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescriptionArabe'].errors?.['minlength']">Description Arabe doit comporter au moins 10 caractères.</small>
+                <small class="text-danger" *ngIf="dossierPieceJointeForm.controls['dossierPieceJointeDescriptionArabe'].errors?.['maxlength']">Description Arabe ne peut pas dépasser 1000 caractères.</small>
+              </div>
+            </div>
+          </div>
+  
+         
+  
+          
+  
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2">Mettre à jour</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()">Annuler</button>
+          </div>
+        </form>
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

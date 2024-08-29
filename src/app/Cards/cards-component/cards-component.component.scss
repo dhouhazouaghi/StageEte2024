@@ -1,0 +1,69 @@
+.menu-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    color: #525255;
+    font-size: 24px;
+    text-align: center;
+    margin: 15px;
+    cursor: pointer;
+  }
+  
+  .menu-box:hover {
+    background-color: #adbda5;
+    transform: translateX(3px);
+    transition-duration: 0.3s;
+  }
+  
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;  
+    padding-bottom: 50px;
+  }
+  
+  .menu-box i {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .content-page {
+    height: 100vh;  
+    overflow-y: auto;  
+    padding-bottom: 20px;
+  }
+  
+  .container {
+    min-height: 100%;  
+    display: flex;
+    flex-direction: column;
+  }
+  ///////////////////
+/* Style pour le titre principal */
+.title-heading {
+  font-size: 2.5rem; /* Taille de police plus grande pour le titre */
+  font-weight: bold; /* Texte en gras pour le titre */
+  color: #439c0f; /* Couleur personnalisée */
+  margin-bottom: 0.5rem; /* Marge inférieure */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ombre légère pour le texte */
+}
+
+/* Style pour le sous-titre */
+.subtitle {
+  font-size: 1.25rem; /* Taille de police plus petite pour le sous-titre */
+  color: #666666; /* Couleur grise pour le sous-titre */
+  font-style: italic; /* Italique pour le sous-titre */
+  margin-top: 0; /* Réduit la marge supérieure */
+}
+/* Style commun pour les icônes */
+.icon-common {
+  font-size: 1.5rem; /* Taille de police pour les icônes */
+  margin-right: 0.5rem; /* Espace entre l'icône et le texte */
+  color: #439c0f; /* Couleur bleue pour toutes les icônes */
+}

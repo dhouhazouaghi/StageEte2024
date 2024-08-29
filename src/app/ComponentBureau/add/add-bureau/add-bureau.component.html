@@ -1,0 +1,104 @@
+<div class="container-fluid mt-5">
+    <div class="card" style="width: 100%;">
+      <div class="card-header" style="background-color: #829B66; color: white;">
+        <h4 class="card-title mb-0" style="font-size: 1.1rem;" i18n="@@addBureauTitle">Ajouter un bureau</h4>
+      </div>
+      <div class="card-body p-5">
+        <form [formGroup]="bureauForm" (ngSubmit)="addBureau()" class="row g-3">
+      
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauRaisonSocial" class="form-label bold-label" i18n="@@raisonSocialLabel">Raison Sociale <span class="text-danger">*</span></label>
+              <input id="bureauRaisonSocial" type="text" class="form-control green-border" formControlName="bureauRaisonSocial" required>
+              <div *ngIf="bureauForm.controls['bureauRaisonSocial'].invalid && (bureauForm.controls['bureauRaisonSocial'].dirty || bureauForm.controls['bureauRaisonSocial'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauRaisonSocial'].errors?.['required']" i18n="@@raisonSocialRequired">Raison Sociale est requise.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauRaisonSocialArabe" class="form-label bold-label" i18n="@@raisonSocialArabeLabel">Raison Sociale Arabe <span class="text-danger">*</span></label>
+              <input id="bureauRaisonSocialArabe" type="text" class="form-control green-border" formControlName="bureauRaisonSocialArabe" required>
+              <div *ngIf="bureauForm.controls['bureauRaisonSocialArabe'].invalid && (bureauForm.controls['bureauRaisonSocialArabe'].dirty || bureauForm.controls['bureauRaisonSocialArabe'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauRaisonSocialArabe'].errors?.['required']" i18n="@@raisonSocialArabeRequired">Raison Sociale Arabe est requise.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauPersonneContact" class="form-label bold-label" i18n="@@personneContactLabel">Personne de Contact <span class="text-danger">*</span></label>
+              <input id="bureauPersonneContact" type="text" class="form-control green-border" formControlName="bureauPersonneContact" required>
+              <div *ngIf="bureauForm.controls['bureauPersonneContact'].invalid && (bureauForm.controls['bureauPersonneContact'].dirty || bureauForm.controls['bureauPersonneContact'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauPersonneContact'].errors?.['required']" i18n="@@personneContactRequired">Personne de Contact est requise.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauPersonneContactArabe" class="form-label bold-label" i18n="@@personneContactArabeLabel">Personne de Contact Arabe <span class="text-danger">*</span></label>
+              <input id="bureauPersonneContactArabe" type="text" class="form-control green-border" formControlName="bureauPersonneContactArabe" required>
+              <div *ngIf="bureauForm.controls['bureauPersonneContactArabe'].invalid && (bureauForm.controls['bureauPersonneContactArabe'].dirty || bureauForm.controls['bureauPersonneContactArabe'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauPersonneContactArabe'].errors?.['required']" i18n="@@personneContactArabeRequired">Personne de Contact Arabe est requise.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauTelephone" class="form-label bold-label" i18n="@@telephoneLabel">Téléphone <span class="text-danger">*</span></label>
+              <input id="bureauTelephone" type="text" class="form-control green-border" formControlName="bureauTelephone" required>
+              <div *ngIf="bureauForm.controls['bureauTelephone'].invalid && (bureauForm.controls['bureauTelephone'].dirty || bureauForm.controls['bureauTelephone'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauTelephone'].errors?.['required']" i18n="@@telephoneRequired">Téléphone est requis.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauGsm" class="form-label bold-label" i18n="@@gsmLabel">GSM <span class="text-danger">*</span></label>
+              <input id="bureauGsm" type="text" class="form-control green-border" formControlName="bureauGsm" required>
+              <div *ngIf="bureauForm.controls['bureauGsm'].invalid && (bureauForm.controls['bureauGsm'].dirty || bureauForm.controls['bureauGsm'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauGsm'].errors?.['required']" i18n="@@gsmRequired">GSM est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauFax" class="form-label bold-label" i18n="@@faxLabel">Fax</label>
+              <input id="bureauFax" type="text" class="form-control green-border" formControlName="bureauFax">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauAdresse" class="form-label bold-label" i18n="@@adresseLabel">Adresse <span class="text-danger">*</span></label>
+              <input id="bureauAdresse" type="text" class="form-control green-border" formControlName="bureauAdresse" required>
+              <div *ngIf="bureauForm.controls['bureauAdresse'].invalid && (bureauForm.controls['bureauAdresse'].dirty || bureauForm.controls['bureauAdresse'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauAdresse'].errors?.['required']" i18n="@@adresseRequired">Adresse est requise.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauAdresseArabe" class="form-label bold-label" i18n="@@adresseArabeLabel">Adresse Arabe <span class="text-danger">*</span></label>
+              <input id="bureauAdresseArabe" type="text" class="form-control green-border" formControlName="bureauAdresseArabe" required>
+              <div *ngIf="bureauForm.controls['bureauAdresseArabe'].invalid && (bureauForm.controls['bureauAdresseArabe'].dirty || bureauForm.controls['bureauAdresseArabe'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauAdresseArabe'].errors?.['required']" i18n="@@adresseArabeRequired">Adresse Arabe est requise.</small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="bureauCodePostal" class="form-label bold-label" i18n="@@codePostalLabel">Code Postal <span class="text-danger">*</span></label>
+              <input id="bureauCodePostal" type="text" class="form-control green-border" formControlName="bureauCodePostal" required>
+              <div *ngIf="bureauForm.controls['bureauCodePostal'].invalid && (bureauForm.controls['bureauCodePostal'].dirty || bureauForm.controls['bureauCodePostal'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauCodePostal'].errors?.['required']" i18n="@@codePostalRequired">Code Postal est requis.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="bureauEmail" class="form-label bold-label" i18n="@@emailLabel">Email <span class="text-danger">*</span></label>
+              <input id="bureauEmail" type="email" class="form-control green-border" formControlName="bureauEmail" required>
+              <div *ngIf="bureauForm.controls['bureauEmail'].invalid && (bureauForm.controls['bureauEmail'].dirty || bureauForm.controls['bureauEmail'].touched)">
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauEmail'].errors?.['required']" i18n="@@emailRequired">Email est requis.</small>
+                <small class="text-danger" *ngIf="bureauForm.controls['bureauEmail'].errors?.['email']" i18n="@@emailInvalid">Email invalide.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn custom-btn-success mx-2" [disabled]="bureauForm.invalid" i18n="@@validateButton">Valider</button>
+            <button type="button" class="btn btn-secondary mx-2" (click)="onCancel()" i18n="@@cancelButton">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
