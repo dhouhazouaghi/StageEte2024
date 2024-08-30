@@ -24,10 +24,10 @@ export class BureauTypeListComponent {
   pageSize: number = 10;
 
   constructor(
-    private bureauTypeService: BureauTypeService, // Adjusted service injection
+    private bureauTypeService: BureauTypeService, 
     private router: Router,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog // Inject MatDialog correctly
+    private dialog: MatDialog  
   ) {}
 
   ngOnInit(): void {
@@ -49,17 +49,17 @@ export class BureauTypeListComponent {
   deleteBureauType(id: number): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponentComponent, {
       width: '250px',
-      data: { /* Pass any data if needed */ }
+      data: {   }
     });
 
-    dialogRef.afterClosed().subscribe((result: boolean) => { // Annotate the result parameter with a boolean type
+    dialogRef.afterClosed().subscribe((result: boolean) => {  
       if (result) {
         this.bureauTypeService.deleteBureauType(id).subscribe(
           () => {
             this.snackBar.open('Type de bureau supprimé avec succès', 'Fermer', {
-              duration: 3000,  // Duration in milliseconds
+              duration: 3000,  
             });
-            this.loadBureauTypes(); // Reload the list after deletion
+            this.loadBureauTypes();  
           },
           (error) => {
             console.error('Erreur lors de la suppression du bureau', error);

@@ -11,43 +11,36 @@ export class AvocatSpecialiteService {
 
   constructor(private http: HttpClient) { }
 
-  // Get all avocat specialites
-  getAvocatSpecialites(): Observable<AvocatSpecialite[]> {
+   getAvocatSpecialites(): Observable<AvocatSpecialite[]> {
     return this.http.get<AvocatSpecialite[]>(this.apiUrl).pipe(
       catchError(this.handleError)
     );
   }
 
-  // Get an avocat specialite by ID
-  getAvocatSpecialiteById(id: number): Observable<AvocatSpecialite> {
+   getAvocatSpecialiteById(id: number): Observable<AvocatSpecialite> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<AvocatSpecialite>(url).pipe(
       catchError(this.handleError)
     );
   }
 
-  // Add a new avocat specialite
-  addAvocatSpecialite(specialite: AvocatSpecialite): Observable<AvocatSpecialite> {
+   addAvocatSpecialite(specialite: AvocatSpecialite): Observable<AvocatSpecialite> {
     return this.http.post<AvocatSpecialite>(this.apiUrl, specialite).pipe(
       catchError(this.handleError)
     );
   }
 
-  // Update an existing avocat specialite
-  updateAvocatSpecialite(id: number, specialite: AvocatSpecialite): Observable<AvocatSpecialite> {
+   updateAvocatSpecialite(id: number, specialite: AvocatSpecialite): Observable<AvocatSpecialite> {
     return this.http.put<AvocatSpecialite>(`${this.apiUrl}/${id}`, specialite);
   }
-  // Delete an avocat specialite
-  deleteAvocatSpecialite(id: number): Observable<void> {
+   deleteAvocatSpecialite(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url).pipe(
       catchError(this.handleError)
     );
   }
 
-  // Handle errors
-  private handleError(error: HttpErrorResponse) {
-    // Customize your error handling here
-    console.error('An error occurred:', error.message);
+   private handleError(error: HttpErrorResponse) {
+     console.error('An error occurred:', error.message);
     return throwError('Something went wrong; please try again later.');
   }}

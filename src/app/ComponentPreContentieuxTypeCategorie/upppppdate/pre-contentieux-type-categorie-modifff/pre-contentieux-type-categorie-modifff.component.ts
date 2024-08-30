@@ -30,7 +30,7 @@ export class PreContentieuxTypeCategorieMODIFFFComponent implements OnInit {
       preContentieuxTypeCategorieLibelleArabe: ['', Validators.required],
       preContentieuxTypeCategorieDescription: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
       preContentieuxTypeCategorieDescriptionArabe: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
-      preContentieuxTypeCategorieEtat: [0] // Assuming 0 is false and 1 is true
+      preContentieuxTypeCategorieEtat: [0] 
     });
   }
 
@@ -62,7 +62,7 @@ export class PreContentieuxTypeCategorieMODIFFFComponent implements OnInit {
     this.preContentieuxTypeCategorieService.updatePreContentieuxTypeCategorie(id, updatedPreContentieuxTypeCategorie).subscribe(
       response => {
         console.log('Type de pré-contentieux mis à jour avec succès', response);
-        this.router.navigate(['/pre-contentieux-type-categories']); // Redirect after successful update
+        this.router.navigate(['/pre-contentieux-type-categories']); 
       },
       error => {
         console.error('Erreur lors de la mise à jour du type de pré-contentieux', error);

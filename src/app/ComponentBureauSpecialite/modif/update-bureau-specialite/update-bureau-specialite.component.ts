@@ -71,7 +71,7 @@ export class UpdateBureauSpecialiteComponent implements OnInit {
           this.snackBar.open('Bureau spécialité mis à jour avec succès', 'Fermer', {
             duration: 3000,
           }).afterDismissed().subscribe(() => {
-            this.router.navigate(['/BureauSpecialiteList']);  // Redirection après que le snack bar soit fermé
+            this.router.navigate(['/BureauSpecialiteList']);   
           });
         },
         error => {

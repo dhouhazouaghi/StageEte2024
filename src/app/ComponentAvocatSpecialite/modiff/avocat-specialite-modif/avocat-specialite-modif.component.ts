@@ -33,7 +33,7 @@ export class AvocatSpecialiteModifComponent implements OnInit {
       avocatSpecialiteLibelleArabe: ['', Validators.required],
       avocatSpecialiteDescription: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
       avocatSpecialiteDescriptionArabe: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
-      avocatSpecialiteEtat: [0] // Assuming 0 for false and 1 for true
+      avocatSpecialiteEtat: [0] 
     });
   }
 
@@ -71,7 +71,7 @@ export class AvocatSpecialiteModifComponent implements OnInit {
           this.snackBar.open('Avocat spécialité mise à jour avec succès', 'Fermer', {
             duration: 3000,
           }).afterDismissed().subscribe(() => {
-            this.router.navigate(['/AvocatSpecialiteList']);  // Redirection après que le snack bar soit fermé
+            this.router.navigate(['/AvocatSpecialiteList']);  
           });
         },
         error => {

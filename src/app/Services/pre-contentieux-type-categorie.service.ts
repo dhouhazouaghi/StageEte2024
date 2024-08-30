@@ -13,8 +13,7 @@ export class PreContentieuxTypeCategorieService {
 
   constructor(private http: HttpClient) {}
 
-  // Get all pre-contentieux type categories
-  getPreContentieuxTypeCategories(): Observable<PreContentieuxTypeCategorie[]> {
+   getPreContentieuxTypeCategories(): Observable<PreContentieuxTypeCategorie[]> {
     return this.http.get<PreContentieuxTypeCategorie[]>(this.apiUrl);
   }
 
@@ -22,8 +21,7 @@ export class PreContentieuxTypeCategorieService {
     return this.http.get<PreContentieuxTypeCategorie>(`${this.apiUrl}/${id}`);
   }
 
-  // Create a new pre-contentieux type category
-  createPreContentieuxTypeCategorie(preContentieuxTypeCategorie: PreContentieuxTypeCategorie): Observable<PreContentieuxTypeCategorie> {
+   createPreContentieuxTypeCategorie(preContentieuxTypeCategorie: PreContentieuxTypeCategorie): Observable<PreContentieuxTypeCategorie> {
     return this.http.post<PreContentieuxTypeCategorie>(this.apiUrl, preContentieuxTypeCategorie);
   }
   
@@ -31,7 +29,6 @@ export class PreContentieuxTypeCategorieService {
     return this.http.put<PreContentieuxTypeCategorie>(`${this.apiUrl}/${id}`, notificationMoyen);
   }
 
-  // Delete a pre-contentieux type category
-  deletePreContentieuxTypeCategorie(id: number): Observable<void> {
+   deletePreContentieuxTypeCategorie(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }}

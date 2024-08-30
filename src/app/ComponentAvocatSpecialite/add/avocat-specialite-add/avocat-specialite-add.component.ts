@@ -46,13 +46,11 @@ export class AvocatSpecialiteAddComponent {
       return;
     }
 
-    // Fetch all AvocatSpecialites to determine the max ID
     this.avocatSpecialiteService.getAvocatSpecialites().subscribe(
       (avocatSpecialites: AvocatSpecialite[]) => {
         const maxId = avocatSpecialites.reduce((max, a) => a.id > max ? a.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new AvocatSpecialite with the new ID
         const avocatSpecialite: AvocatSpecialite = { id: newId, ...this.avocatSpecialiteForm.value };
         this.avocatSpecialiteService.addAvocatSpecialite(avocatSpecialite).subscribe(
           response => {
@@ -60,7 +58,7 @@ export class AvocatSpecialiteAddComponent {
             this.snackBar.open('Spécialité de l\'avocat ajoutée avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/AvocatSpecialiteList']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/AvocatSpecialiteList']);  
             });
           },
           error => {

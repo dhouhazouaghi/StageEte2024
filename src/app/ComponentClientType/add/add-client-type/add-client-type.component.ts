@@ -42,21 +42,19 @@ export class AddClientTypeComponent  {
       return;
     }
 
-    // Fetch all ClientTypes to determine the max ID
-    this.clientTypeService.getAll().subscribe(
+     this.clientTypeService.getAll().subscribe(
       (clientTypes: ClientType[]) => {
         const maxId = clientTypes.reduce((max, c) => c.id > max ? c.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new ClientType with the new ID
-        const clientType: ClientType = { id: newId, ...this.clientTypeForm.value };
+         const clientType: ClientType = { id: newId, ...this.clientTypeForm.value };
         this.clientTypeService.addClientType(clientType).subscribe(
           response => {
             console.log('ClientType ajouté avec succès', response);
             this.snackBar.open('ClientType ajouté avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/client-types']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/client-types']);   
             });
           },
           error => {

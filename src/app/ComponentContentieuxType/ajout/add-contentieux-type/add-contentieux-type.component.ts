@@ -20,7 +20,7 @@ export class AddContentieuxTypeComponent {
 
   constructor(
     private fb: FormBuilder,
-    private contentieuxTypeService: ContentieuxTypeService, // Adjust service import
+    private contentieuxTypeService: ContentieuxTypeService,  
     private router: Router,
     private snackBar: MatSnackBar
   ) {
@@ -44,21 +44,19 @@ export class AddContentieuxTypeComponent {
       return;
     }
 
-    // Fetch all ContentieuxTypes to determine the max ID
-    this.contentieuxTypeService.getAllContentieuxType().subscribe(
+     this.contentieuxTypeService.getAllContentieuxType().subscribe(
       (contentieuxTypes: ContentieuxType[]) => {
         const maxId = contentieuxTypes.reduce((max, c) => c.id > max ? c.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new ContentieuxType with the new ID
-        const contentieuxType: ContentieuxType = { id: newId, ...this.contentieuxTypeForm.value };
+         const contentieuxType: ContentieuxType = { id: newId, ...this.contentieuxTypeForm.value };
         this.contentieuxTypeService.createContentieuxType(contentieuxType).subscribe(
           response => {
             console.log('ContentieuxType ajouté avec succès', response);
             this.snackBar.open('Type de contentieux ajouté avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/list']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/list']);   
             });
           },
           error => {

@@ -51,15 +51,14 @@ export class AddDocTypeComponent  {
         const maxId = documentTypes.reduce((max, d) => d.id > max ? d.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new DocumentType with the new ID
-        const documentType: DocType = { id: newId, ...this.documentTypeForm.value };
+         const documentType: DocType = { id: newId, ...this.documentTypeForm.value };
         this.documentTypeService.addDocumentType(documentType).subscribe(
           response => {
             console.log('DocumentType ajouté avec succès', response);
             this.snackBar.open('Type de document ajouté avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/docTypes']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/docTypes']);   
             });
           },
           error => {

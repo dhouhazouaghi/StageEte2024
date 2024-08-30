@@ -56,7 +56,7 @@ export class AddAffaireSensComponent {
             this.snackBar.open('Affaire Sens ajoutée avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/AffaireSensList']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/AffaireSensList']);  
             });
           },
           error => {

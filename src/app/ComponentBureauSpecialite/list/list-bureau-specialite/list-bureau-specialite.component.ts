@@ -25,18 +25,18 @@ export class ListBureauSpecialiteComponent {
   pageSize: number = 10;
 
   constructor(
-    private bureauSpecialiteService: BureauSpecialiteService,  // Update the service injection
+    private bureauSpecialiteService: BureauSpecialiteService,   
     private router: Router,
     private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
-    this.loadBureauSpecialites();  // Update the method call
+    this.loadBureauSpecialites();  
   }
 
-  loadBureauSpecialites(): void {  // Update the method name
-    this.bureauSpecialiteService.getBureauSpecialites().subscribe(  // Update the service method
+  loadBureauSpecialites(): void {   
+    this.bureauSpecialiteService.getBureauSpecialites().subscribe(   
       (data) => {
         this.bureauSpecialites = data;
       },
@@ -47,20 +47,20 @@ export class ListBureauSpecialiteComponent {
     );
   }
 
-  deleteBureauSpecialite(id: number): void {  // Update the method name
+  deleteBureauSpecialite(id: number): void {  
     const dialogRef = this.dialog.open(ConfirmDialogComponentComponent, {
       width: '250px',
-      data: { /* Pass any data if needed */ }
+      data: {  }
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
       if (result) {
-        this.bureauSpecialiteService.deleteBureauSpecialite(id).subscribe(  // Update the service method
+        this.bureauSpecialiteService.deleteBureauSpecialite(id).subscribe(   
           () => {
             this.snackBar.open('Spécialité de bureau supprimée avec succès', 'Fermer', {
               duration: 3000,
             });
-            this.loadBureauSpecialites();  // Reload the list after deletion
+            this.loadBureauSpecialites();  
           },
           (error) => {
             console.error('Erreur lors de la suppression de la spécialité de bureau', error);
@@ -74,13 +74,13 @@ export class ListBureauSpecialiteComponent {
     });
   }
 
-  searchBureauSpecialites(): void {  // Update the method name
+  searchBureauSpecialites(): void {   
     if (this.searchQuery.trim() !== '') {
       this.bureauSpecialites = this.bureauSpecialites.filter((specialite) =>
         specialite.bureauSpecialiteLibelle.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     } else {
-      this.loadBureauSpecialites();  // Update the method call
+      this.loadBureauSpecialites();  
     }
   }
 

@@ -76,7 +76,7 @@ export class UpdateClientTypeComponent implements OnInit {
         this.snackBar.open('Type Client mis à jour avec succès', 'Fermer', {
           duration: 3000,
         }).afterDismissed().subscribe(() => {
-          this.router.navigate(['/client-types']);  // Redirect after the snack bar is closed
+          this.router.navigate(['/client-types']);    
         });
       },
       error => {

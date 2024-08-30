@@ -28,7 +28,7 @@ export class DocumentTypeLisComponent {
     private documentTypeService: DocumentTypeService,
     private router: Router,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog // Inject MatDialog correctly
+    private dialog: MatDialog  
   ) {}
 
   ngOnInit(): void {
@@ -50,17 +50,17 @@ export class DocumentTypeLisComponent {
   deleteDocumentType(id: number): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponentComponent, {
       width: '250px',
-      data: { /* Pass any data if needed */ }
+      data: {   }
     });
 
-    dialogRef.afterClosed().subscribe((result: boolean) => { // Annotate the result parameter with a boolean type
+    dialogRef.afterClosed().subscribe((result: boolean) => {  
       if (result) {
         this.documentTypeService.deleteDocumentType(id).subscribe(
           () => {
             this.snackBar.open('Document Type deleted successfully', 'Close', {
               duration: 3000,  // Duration in milliseconds
             });
-            this.loadDocumentTypes(); // Reload the list after deletion
+            this.loadDocumentTypes();  
           },
           (error) => {
             console.error('Error deleting document type', error);

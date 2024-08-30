@@ -70,7 +70,7 @@ export class DossierAxeModifComponent implements OnInit {
           this.snackBar.open('Dossier Axe mis à jour avec succès', 'Fermer', {
             duration: 3000,
           }).afterDismissed().subscribe(() => {
-            this.router.navigate(['/DossierAxesList']);  // Redirection après que le snack bar soit fermé
+            this.router.navigate(['/DossierAxesList']);   
           });
         },
         error => {

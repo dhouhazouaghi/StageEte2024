@@ -59,21 +59,19 @@ export class DossierPieceJointeAddComponent {
       return;
     }
 
-    // Fetch all DossierPieceJointes to determine the max ID
-    this.dossierPieceJointeService.getAllDossierPieceJointes().subscribe(
+     this.dossierPieceJointeService.getAllDossierPieceJointes().subscribe(
       (dossierPieceJointes: DossierPieceJointe[]) => {
         const maxId = dossierPieceJointes.reduce((max, d) => d.id > max ? d.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new DossierPieceJointe with the new ID
-        const dossierPieceJointe: DossierPieceJointe = { id: newId, ...this.dossierPieceJointeForm.value };
+         const dossierPieceJointe: DossierPieceJointe = { id: newId, ...this.dossierPieceJointeForm.value };
         this.dossierPieceJointeService.createDossierPieceJointe(dossierPieceJointe).subscribe(
           response => {
             console.log('DossierPieceJointe ajouté avec succès', response);
             this.snackBar.open('Pièce jointe du dossier ajoutée avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/PieceJointeList']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/PieceJointeList']);   
             });
           },
           error => {

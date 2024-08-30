@@ -70,7 +70,7 @@ export class UpdateBureauTypeComponent implements OnInit {
           this.snackBar.open('Type de bureau mis à jour avec succès', 'Fermer', {
             duration: 3000,
           }).afterDismissed().subscribe(() => {
-            this.router.navigate(['/bureau-types']);  // Redirection après que le snack bar soit fermé
+            this.router.navigate(['/bureau-types']);   
           });
         },
         error => {

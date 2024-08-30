@@ -47,21 +47,19 @@ export class AddDossCategComponent {
       return;
     }
   
-    // Fetch all DossierCategories to determine the max ID
-    this.dossierCategorieService.getDossierCategories().subscribe(
+     this.dossierCategorieService.getDossierCategories().subscribe(
       (dossierCategories: DossierCategorie[]) => {
         const maxId = dossierCategories.reduce((max, d) => d.id > max ? d.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new DossierCategorie with the new ID
-        const dossierCategorie: DossierCategorie = { id: newId, ...this.dossierCategorieForm.value };
+         const dossierCategorie: DossierCategorie = { id: newId, ...this.dossierCategorieForm.value };
         this.dossierCategorieService.addDossierCategorie(dossierCategorie).subscribe(
           response => {
             console.log('DossierCategorie ajouté avec succès', response);
             this.snackBar.open('Catégorie de dossier ajoutée avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/dossier-categories']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/dossier-categories']);   
             });
           },
           error => {

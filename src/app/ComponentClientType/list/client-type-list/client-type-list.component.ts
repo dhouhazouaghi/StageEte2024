@@ -52,7 +52,7 @@ export class ClientTypeListComponent implements OnInit {
   deleteClientType(id: number): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponentComponent, {
       width: '250px',
-      data: { /* Pass any data if needed */ }
+      data: {   }
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {

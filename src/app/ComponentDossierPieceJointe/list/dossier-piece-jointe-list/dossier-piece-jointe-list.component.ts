@@ -24,7 +24,7 @@ export class DossierPieceJointeListComponent {
   pageSize: number = 10;
 
   constructor(
-    private dossierPieceJointeService: DossierPieceJointeService,  // Updated service injection
+    private dossierPieceJointeService: DossierPieceJointeService,   
     private router: Router,
     private snackBar: MatSnackBar,
     private dialog: MatDialog
@@ -47,7 +47,7 @@ export class DossierPieceJointeListComponent {
   deleteDossierPieceJointe(id: number): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponentComponent, {
       width: '250px',
-      data: { /* Pass any data if needed */ }
+      data: {  }
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {

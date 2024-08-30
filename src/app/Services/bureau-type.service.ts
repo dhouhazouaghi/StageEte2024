@@ -15,39 +15,33 @@ export class BureauTypeService {
 
   constructor(private http: HttpClient) { }
 
-  // Get all BureauTypes
-  getBureauTypes(): Observable<BureauType[]> {
+   getBureauTypes(): Observable<BureauType[]> {
     return this.http.get<BureauType[]>(this.apiUrl)
       .pipe(catchError(this.handleError));
   }
 
-  // Get a BureauType by ID
-  getBureauTypeById(bureauTypeRef: number): Observable<BureauType> {
+   getBureauTypeById(bureauTypeRef: number): Observable<BureauType> {
     return this.http.get<BureauType>(`${this.apiUrl}/${bureauTypeRef}`)
       .pipe(catchError(this.handleError));
   }
 
-  // Add a new BureauType
-  addBureauType(bureauType: BureauType): Observable<BureauType> {
+   addBureauType(bureauType: BureauType): Observable<BureauType> {
     return this.http.post<BureauType>(this.apiUrl, bureauType, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
-  // Update an existing BureauType
-  updateBureauType(bureauTypeRef: number, bureauType: BureauType): Observable<BureauType> {
+   updateBureauType(bureauTypeRef: number, bureauType: BureauType): Observable<BureauType> {
     return this.http.put<BureauType>(`${this.apiUrl}/${bureauTypeRef}`, bureauType, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
-  // Delete a BureauType
-  deleteBureauType(bureauTypeRef: number): Observable<void> {
+   deleteBureauType(bureauTypeRef: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${bureauTypeRef}`)
       .pipe(catchError(this.handleError));
   }
 
-  // Error handling
-  private handleError(error: any): Observable<never> {
-    console.error('An error occurred:', error); // For debugging purposes
+   private handleError(error: any): Observable<never> {
+    console.error('An error occurred:', error);  
     return throwError(() => new Error('Something went wrong, please try again later.'));
   }
 }

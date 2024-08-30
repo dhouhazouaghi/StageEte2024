@@ -5,18 +5,14 @@
   {{ errorMessage }}
 </div>
 
-<!-- Conteneur pour les boutons et la recherche -->
-<div class="d-flex justify-content-between mb-3">
-  <!-- Bouton Ajouter -->
-  <button type="button" class="btn custom-btn-success" [routerLink]="['/add-doc-type']">
+ <div class="d-flex justify-content-between mb-3">
+   <button type="button" class="btn custom-btn-success" [routerLink]="['/add-doc-type']">
     <i class="fas fa-plus"></i>
   </button>
   
-  <!-- Espace pour pousser le champ de recherche vers la droite -->
-  <div class="ml-auto"></div>
+   <div class="ml-auto"></div>
 
-   <!-- Champ de recherche avec bouton -->
-   <div class="input-group">
+    <div class="input-group">
      <div class="form-outline">
        <input
          type="search"

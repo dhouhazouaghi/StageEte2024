@@ -52,7 +52,6 @@ export class AddBureauComponent {
         const maxId = bureaus.reduce((max, b) => b.id > max ? b.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new Bureau with the new ID
         const bureau: Bureau = { id: newId, ...this.bureauForm.value };
         this.bureauService.createBureau(bureau).subscribe(
           response => {

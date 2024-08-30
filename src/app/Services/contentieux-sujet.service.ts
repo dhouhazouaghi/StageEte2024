@@ -11,28 +11,23 @@ export class ContentieuxSujetService {
 
   constructor(private http: HttpClient) { }
 
-  // Get all contentieux sujets
-  getAllContentieuxSujets(): Observable<ContentieuxSujet[]> {
+   getAllContentieuxSujets(): Observable<ContentieuxSujet[]> {
     return this.http.get<ContentieuxSujet[]>(this.apiUrl);
   }
 
-  // Get a single contentieux sujet by reference
-  getContentieuxSujetById(id: number): Observable<ContentieuxSujet> {
+   getContentieuxSujetById(id: number): Observable<ContentieuxSujet> {
     return this.http.get<ContentieuxSujet>(`${this.apiUrl}/${id}`);
   }
 
-  // Add a new contentieux sujet
-  addContentieuxSujet(contentieuxSujet: ContentieuxSujet): Observable<ContentieuxSujet> {
+   addContentieuxSujet(contentieuxSujet: ContentieuxSujet): Observable<ContentieuxSujet> {
     return this.http.post<ContentieuxSujet>(this.apiUrl, contentieuxSujet);
   }
 
-  // Update an existing contentieux sujet
-  updateContentieuxSujet(id: number, contentieuxSujet: ContentieuxSujet): Observable<ContentieuxSujet> {
+   updateContentieuxSujet(id: number, contentieuxSujet: ContentieuxSujet): Observable<ContentieuxSujet> {
     return this.http.put<ContentieuxSujet>(`${this.apiUrl}/${id}`, contentieuxSujet);
   }
 
-  // Delete a contentieux sujet
-  deleteContentieuxSujet(id: number): Observable<void> {
+   deleteContentieuxSujet(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 

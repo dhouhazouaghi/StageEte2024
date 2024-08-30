@@ -46,21 +46,19 @@ export class AddDossierAxeComponent {
       return;
     }
 
-    // Fetch all DossierAxes to determine the max ID
-    this.dossierAxeService.getAllDossierAxes().subscribe(
+     this.dossierAxeService.getAllDossierAxes().subscribe(
       (dossierAxes: DossierAxe[]) => {
         const maxId = dossierAxes.reduce((max, t) => t.id > max ? t.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new DossierAxe with the new ID
-        const dossierAxe: DossierAxe = { id: newId, ...this.dossierAxeForm.value };
+         const dossierAxe: DossierAxe = { id: newId, ...this.dossierAxeForm.value };
         this.dossierAxeService.createDossierAxe(dossierAxe).subscribe(
           response => {
             console.log('DossierAxe ajouté avec succès', response);
             this.snackBar.open('Dossier Axe ajouté avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/DossierAxesList']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/DossierAxesList']);  
             });
           },
           error => {

@@ -8,28 +8,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AffaireSensService {
 
-  private apiUrl = 'http://localhost:3000/affaireSens'; // URL to your JSON Server or API
+  private apiUrl = 'http://localhost:3000/affaireSens'; 
 
   constructor(private http: HttpClient) {}
 
-  // Create a new AffaireSens
-  createAffaireSens(affaireSens: AffaireSens): Observable<AffaireSens> {
+   createAffaireSens(affaireSens: AffaireSens): Observable<AffaireSens> {
     return this.http.post<AffaireSens>(this.apiUrl, affaireSens)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  // Read all AffaireSens
-  getAffaireSens(): Observable<AffaireSens[]> {
+   getAffaireSens(): Observable<AffaireSens[]> {
     return this.http.get<AffaireSens[]>(this.apiUrl)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  // Read an AffaireSens by ID
-  getAffaireSensById(id: number): Observable<AffaireSens> {
+   getAffaireSensById(id: number): Observable<AffaireSens> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<AffaireSens>(url)
       .pipe(
@@ -41,8 +38,7 @@ export class AffaireSensService {
   updateAffaireSens(id: number, affaireSens: AffaireSens): Observable<AffaireSens> {
     return this.http.put<AffaireSens>(`${this.apiUrl}/${id}`, affaireSens);
   }
-  // Delete an AffaireSens by ID
-  deleteAffaireSens(id: number): Observable<void> {
+   deleteAffaireSens(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url)
       .pipe(
@@ -50,8 +46,7 @@ export class AffaireSensService {
       );
   }
 
-  // Error handling
-  private handleError(error: any): Observable<never> {
+   private handleError(error: any): Observable<never> {
     console.error('An error occurred', error);
     return throwError(error.message || error);
   }}

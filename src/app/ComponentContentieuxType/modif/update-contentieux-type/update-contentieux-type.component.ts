@@ -19,11 +19,11 @@ import { ContentieuxType } from '../../../../Models/ContentieuxType';
 export class UpdateContentieuxTypeComponent implements OnInit { 
   contentieuxTypeForm: FormGroup; 
   errorMessage: string = '';
-  contentieuxTypeId: number | null = null; // Update ID variable
+  contentieuxTypeId: number | null = null;  
 
   constructor(
     private fb: FormBuilder,
-    private contentieuxTypeService: ContentieuxTypeService, // Update service instance
+    private contentieuxTypeService: ContentieuxTypeService,  
     private router: Router,
     private route: ActivatedRoute,
     private snackBar: MatSnackBar
@@ -57,7 +57,7 @@ export class UpdateContentieuxTypeComponent implements OnInit {
     this.contentieuxTypeForm.patchValue({ contentieuxTypeEtat: target.checked ? 1 : 0 });
   }
 
-  updateContentieuxType(): void { // Update method name
+  updateContentieuxType(): void {  
     if (this.contentieuxTypeForm.invalid) {
       this.errorMessage = 'Veuillez remplir tous les champs obligatoires.';
       return;
@@ -65,13 +65,13 @@ export class UpdateContentieuxTypeComponent implements OnInit {
 
     if (this.contentieuxTypeId !== null) {
       const contentieuxType: ContentieuxType = { id: this.contentieuxTypeId, ...this.contentieuxTypeForm.value };
-      this.contentieuxTypeService.updateContentieuxType(this.contentieuxTypeId, contentieuxType).subscribe( // Update service method
+      this.contentieuxTypeService.updateContentieuxType(this.contentieuxTypeId, contentieuxType).subscribe(  
         response => {
           console.log('ContentieuxType mis à jour avec succès', response);
           this.snackBar.open('Type de contentieux mis à jour avec succès', 'Fermer', {
             duration: 3000,
           }).afterDismissed().subscribe(() => {
-            this.router.navigate(['/list']);  // Redirection après que le snack bar soit fermé
+            this.router.navigate(['/list']);    
           });
         },
         error => {

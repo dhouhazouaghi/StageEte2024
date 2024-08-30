@@ -84,7 +84,7 @@ export class UpdatePieceJointeComponent implements OnInit {
           this.snackBar.open('Pièce jointe du dossier mise à jour avec succès', 'Fermer', {
             duration: 3000,
           }).afterDismissed().subscribe(() => {
-            this.router.navigate(['/PieceJointeList']);  // Redirection après la fermeture du snack bar
+            this.router.navigate(['/PieceJointeList']);   
           });
         },
         error => {

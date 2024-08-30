@@ -15,29 +15,26 @@ export class GouvernoratService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
- // Get all Gouvernorats
- getGouvernorats(): Observable<Gouvernorat[]> {
+  getGouvernorats(): Observable<Gouvernorat[]> {
   return this.http.get<Gouvernorat[]>(this.apiUrl);
 }
 
-// Get a single Gouvernorat by ID
+ 
 getGouvernoratById(id: number): Observable<Gouvernorat> {
   const url = `${this.apiUrl}/${id}`;
   return this.http.get<Gouvernorat>(url);
 }
-
-// Add a new Gouvernorat
+ 
 addGouvernorat(gouvernorat: Gouvernorat): Observable<Gouvernorat> {
   return this.http.post<Gouvernorat>(this.apiUrl, gouvernorat, this.httpOptions);
 }
-
-// Update an existing Gouvernorat
+ 
 updateGouvernorat(id: number, gouvernorat: Gouvernorat): Observable<Gouvernorat> {
   const url = `${this.apiUrl}/${id}`;
   return this.http.put<Gouvernorat>(url, gouvernorat, this.httpOptions);
 }
 
-// Delete a Gouvernorat
+ 
 deleteGouvernorat(id: number): Observable<void> {
   const url = `${this.apiUrl}/${id}`;
   return this.http.delete<void>(url);

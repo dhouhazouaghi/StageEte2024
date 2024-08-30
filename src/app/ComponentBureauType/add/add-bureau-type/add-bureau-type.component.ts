@@ -45,21 +45,19 @@ export class AddBureauTypeComponent {
       return;
     }
 
-    // Fetch all BureauTypes to determine the max ID
-    this.bureauTypeService.getBureauTypes().subscribe(
+     this.bureauTypeService.getBureauTypes().subscribe(
       (bureauTypes: BureauType[]) => {
         const maxId = bureauTypes.reduce((max, b) => b.id > max ? b.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new BureauType with the new ID
-        const bureauType: BureauType = { id: newId, ...this.bureauTypeForm.value };
+         const bureauType: BureauType = { id: newId, ...this.bureauTypeForm.value };
         this.bureauTypeService.addBureauType(bureauType).subscribe(
           response => {
             console.log('BureauType ajouté avec succès', response);
             this.snackBar.open('Type de bureau ajouté avec succès', 'Fermer', {
               duration: 3000,
             }).afterDismissed().subscribe(() => {
-              this.router.navigate(['/bureau-types']);  // Redirect after the snack bar is closed
+              this.router.navigate(['/bureau-types']);   
             });
           },
           error => {

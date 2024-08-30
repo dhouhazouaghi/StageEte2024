@@ -18,25 +18,25 @@ import { AvocatSpecialiteService } from '../../../Services/avocat-specialite.ser
   styleUrl: './list-avocat-specialite.component.scss'
 })
 export class ListAvocatSpecialiteComponent {
-  avocatSpecialites: AvocatSpecialite[] = []; // Update the property name
+  avocatSpecialites: AvocatSpecialite[] = [];
   searchQuery: string = '';
   errorMessage: string = '';
   page: number = 1;
   pageSize: number = 10;
 
   constructor(
-    private avocatSpecialiteService: AvocatSpecialiteService, // Update the service injection
+    private avocatSpecialiteService: AvocatSpecialiteService,
     private router: Router,
     private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
-    this.loadAvocatSpecialites(); // Update the method call
+    this.loadAvocatSpecialites(); 
   }
 
-  loadAvocatSpecialites(): void { // Update the method name
-    this.avocatSpecialiteService.getAvocatSpecialites().subscribe( // Update the service method
+  loadAvocatSpecialites(): void { 
+    this.avocatSpecialiteService.getAvocatSpecialites().subscribe( 
       (data) => {
         this.avocatSpecialites = data;
       },
@@ -47,20 +47,20 @@ export class ListAvocatSpecialiteComponent {
     );
   }
 
-  deleteAvocatSpecialite(id: number): void { // Update the method name
+  deleteAvocatSpecialite(id: number): void { 
     const dialogRef = this.dialog.open(ConfirmDialogComponentComponent, {
       width: '250px',
-      data: { /* Pass any data if needed */ }
+      data: { }
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
       if (result) {
-        this.avocatSpecialiteService.deleteAvocatSpecialite(id).subscribe( // Update the service method
+        this.avocatSpecialiteService.deleteAvocatSpecialite(id).subscribe( 
           () => {
             this.snackBar.open('Spécialité d\'avocat supprimée avec succès', 'Fermer', {
               duration: 3000,
             });
-            this.loadAvocatSpecialites(); // Reload the list after deletion
+            this.loadAvocatSpecialites(); 
           },
           (error) => {
             console.error('Erreur lors de la suppression de la spécialité d\'avocat', error);
@@ -74,13 +74,13 @@ export class ListAvocatSpecialiteComponent {
     });
   }
 
-  searchAvocatSpecialites(): void { // Update the method name
+  searchAvocatSpecialites(): void { 
     if (this.searchQuery.trim() !== '') {
       this.avocatSpecialites = this.avocatSpecialites.filter((specialite) =>
         specialite.avocatSpecialiteLibelle.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     } else {
-      this.loadAvocatSpecialites(); // Update the method call
+      this.loadAvocatSpecialites(); 
     }
   }
 

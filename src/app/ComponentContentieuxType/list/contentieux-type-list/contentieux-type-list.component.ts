@@ -28,7 +28,7 @@ export class ContentieuxTypeListComponent implements OnInit {
     private contentieuxTypeService: ContentieuxTypeService,
     private router: Router,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog // Inject MatDialog correctly
+    private dialog: MatDialog  
   ) {}
 
   ngOnInit(): void {
@@ -50,17 +50,17 @@ export class ContentieuxTypeListComponent implements OnInit {
   deleteContentieuxType(id: number): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponentComponent, {
       width: '250px',
-      data: { /* Pass any data if needed */ }
+      data: {  }
     });
 
-    dialogRef.afterClosed().subscribe((result: boolean) => { // Annotate the result parameter with a boolean type
+    dialogRef.afterClosed().subscribe((result: boolean) => {  
       if (result) {
         this.contentieuxTypeService.deleteContentieuxType(id).subscribe(
           () => {
             this.snackBar.open('Type de contentieux supprimé avec succès', 'Fermer', {
-              duration: 3000,  // Duration in milliseconds
+              duration: 3000,   
             });
-            this.loadContentieuxTypes(); // Reload the list after deletion
+            this.loadContentieuxTypes();  
           },
           (error) => {
             console.error('Erreur lors de la suppression du type de contentieux', error);

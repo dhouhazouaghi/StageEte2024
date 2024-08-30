@@ -46,14 +46,12 @@ export class AddBureauSpecialiteComponent {
       return;
     }
 
-    // Fetch all BureauSpecialites to determine the max ID
-    this.bureauSpecialiteService.getBureauSpecialites().subscribe(
+     this.bureauSpecialiteService.getBureauSpecialites().subscribe(
       (bureauSpecialites: BureauSpecialite[]) => {
         const maxId = bureauSpecialites.reduce((max, b) => b.id > max ? b.id : max, 0);
         const newId = maxId + 1;
 
-        // Create a new BureauSpecialite with the new ID
-        const bureauSpecialite: BureauSpecialite = { id: newId, ...this.bureauSpecialiteForm.value };
+         const bureauSpecialite: BureauSpecialite = { id: newId, ...this.bureauSpecialiteForm.value };
         this.bureauSpecialiteService.addBureauSpecialite(bureauSpecialite).subscribe(
           response => {
             console.log('BureauSpecialite ajouté avec succès', response);

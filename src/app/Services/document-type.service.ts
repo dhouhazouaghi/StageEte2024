@@ -21,18 +21,15 @@ export class DocumentTypeService {
     return this.http.post<DocType>(this.apiUrl, documentType);
   }
 
-  // Update an existing document type
-  updateDocumentType(id: number, documentType: DocType): Observable<DocType> {
+   updateDocumentType(id: number, documentType: DocType): Observable<DocType> {
     return this.http.put<DocType>(`${this.apiUrl}/${id}`, documentType);
   }
 
-  // Delete a document type by ID
-  deleteDocumentType(id: number): Observable<void> {
+   deleteDocumentType(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  // Get a document type by ID
-  getDocumentTypeById(id: number): Observable<DocType> {
+   getDocumentTypeById(id: number): Observable<DocType> {
     return this.http.get<DocType>(`${this.apiUrl}/${id}`);
   }
   

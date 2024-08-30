@@ -23,7 +23,7 @@ export class DossierCategorieUpdateComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private dossierCategorieService: DossierCategorieServiceService, // Adjust service import as necessary
+    private dossierCategorieService: DossierCategorieServiceService,  
     private router: Router,
     private route: ActivatedRoute,
     private snackBar: MatSnackBar
@@ -72,7 +72,7 @@ export class DossierCategorieUpdateComponent implements OnInit {
           this.snackBar.open('Catégorie de dossier mise à jour avec succès', 'Fermer', {
             duration: 3000,
           }).afterDismissed().subscribe(() => {
-            this.router.navigate(['/dossier-categories']);  // Redirection après que le snack bar soit fermé
+            this.router.navigate(['/dossier-categories']);   
           });
         },
         error => {

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DossierAxeService {
 
-  private apiUrl = 'http://localhost:3000/dossierAxes'; // Adjust URL to your backend API
+  private apiUrl = 'http://localhost:3000/dossierAxes';  
 
   constructor(private http: HttpClient) {}
 

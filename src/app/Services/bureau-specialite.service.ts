@@ -12,32 +12,27 @@ export class BureauSpecialiteService {
   
   constructor(private http: HttpClient) {}
 
-  // Récupérer tous les BureauSpecialites
-  getBureauSpecialites(): Observable<BureauSpecialite[]> {
+   getBureauSpecialites(): Observable<BureauSpecialite[]> {
     return this.http.get<BureauSpecialite[]>(this.apiUrl);
   }
 
-  // Récupérer un BureauSpecialite par son ID
-  getBureauSpecialiteById(id: number): Observable<BureauSpecialite> {
+   getBureauSpecialiteById(id: number): Observable<BureauSpecialite> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<BureauSpecialite>(url);
   }
 
-  // Ajouter un nouveau BureauSpecialite
-  addBureauSpecialite(bureauSpecialite: BureauSpecialite): Observable<BureauSpecialite> {
+   addBureauSpecialite(bureauSpecialite: BureauSpecialite): Observable<BureauSpecialite> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<BureauSpecialite>(this.apiUrl, bureauSpecialite, { headers });
   }
 
-  // Mettre à jour un BureauSpecialite existant
-  updateBureauSpecialite(id: number, bureauSpecialite: BureauSpecialite): Observable<BureauSpecialite> {
+   updateBureauSpecialite(id: number, bureauSpecialite: BureauSpecialite): Observable<BureauSpecialite> {
     const url = `${this.apiUrl}/${id}`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.put<BureauSpecialite>(url, bureauSpecialite, { headers });
   }
 
-  // Supprimer un BureauSpecialite
-  deleteBureauSpecialite(id: number): Observable<void> {
+   deleteBureauSpecialite(id: number): Observable<void> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<void>(url);
   }
